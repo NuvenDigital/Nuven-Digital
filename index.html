@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://nuvendigital.com/assets/og-image.png">
 <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.v9.css">
+<link rel="stylesheet" href="css/style.v10.css">
 <script>
 /* js: hay JavaScript. rm: la persona pidió reducir movimiento. live: la historia se mueve con el scroll.
    La intro se ve una vez por sesión y nunca con "reducir movimiento". */
@@ -38,6 +38,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs><symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9.2 8.6c-.3 1.6 1.7 4.4 4.6 5.3l1.4-1-1.9-1.2-.8.6c-.7-.4-1.4-1.1-1.7-1.8l.7-.8-1-2z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13 7l4 4"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol><symbol id="i-page" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6V3z"/><path d="M14 3v5h5"/></symbol><symbol id="i-pages" viewBox="0 0 24 24"><path d="M8 7h11v14H8z"/><path d="M5 17V3h11"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14 7a4 4 0 0 0 5.5 3.7L11 19.2a2 2 0 0 1-3-3L16.4 8A4 4 0 0 0 14 7z"/></symbol><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol></defs></svg>
 
 <!-- Intro: un punto de luz se abre en línea y deja ver el logo. Ligera y una vez por sesión. -->
 <div class="intro" id="intro" aria-hidden="true">
@@ -60,8 +61,6 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     </a>
     <nav class="nav" aria-label="Principal">
       <a href="#historia">Historia</a>
-      <a href="#demo">Pruébala</a>
-      <a href="#conceptos">Proyectos</a>
       <a href="#proyectos">Estilos</a>
       <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
@@ -75,19 +74,23 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
   <!-- 1. Inicio -->
   <section class="hero" id="inicio">
     <canvas class="field" id="field" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <h1 class="hero-title">Tu negocio merece una web que haga sonar el teléfono.</h1>
-      <p class="hero-sub">Hacemos webs sencillas y profesionales para todo tipo de negocios. Se ven bien en el móvil, cargan rápido y tu WhatsApp está siempre a un toque.</p>
-      <div class="hero-cta">
-        <a class="btn btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Pedir presupuesto por WhatsApp</a>
-        <a class="btn btn-ghost" href="tel:+34625088206">Llamar al +34 625 08 82 06</a>
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <h1 class="hero-title">Tu negocio merece una web que haga sonar el teléfono.</h1>
+        <p class="hero-sub">Webs sencillas y profesionales, rápidas en el móvil y con tu WhatsApp siempre a un toque.</p>
+        <div class="hero-cta">
+          <a class="btn btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Pedir presupuesto</a>
+          <a class="btn btn-ghost" href="tel:+34625088206"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Llamar ahora</a>
+        </div>
       </div>
-      <p class="hero-note">Somos un equipo pequeño de Roses, en Girona. Hablas directo con quien te hace la web.</p>
+      <figure class="neon laptop" data-par="-16">
+        <img src="assets/n9-laptop.webp" width="1200" height="800" alt="Una web de ejemplo vista en un portátil y en un móvil, con el logo de NuvenDigital" decoding="async">
+      </figure>
     </div>
     <div class="giant" aria-hidden="true"><img class="g1" src="assets/logo-wordmark.svg" width="490" height="138" alt=""><img class="g2" src="assets/logo-wordmark.svg" width="490" height="138" alt=""></div>
   </section>
 
-  <div class="marquee" aria-hidden="true"><div class="mq-track"><span>Rápida</span><span>Clara</span><span>A tu medida</span><span>Con WhatsApp</span><span>Fácil de cambiar</span><span>Tuya</span><span>Rápida</span><span>Clara</span><span>A tu medida</span><span>Con WhatsApp</span><span>Fácil de cambiar</span><span>Tuya</span></div></div>
+  <div class="marquee" aria-hidden="true"><div class="mq-track"><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-bolt"/></svg>Rápida</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>Clara</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg>A tu medida</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Con WhatsApp</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-edit"/></svg>Fácil de cambiar</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg>Tuya</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-bolt"/></svg>Rápida</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>Clara</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg>A tu medida</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Con WhatsApp</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-edit"/></svg>Fácil de cambiar</span><span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-heart"/></svg>Tuya</span></div></div>
 
   <!-- 2. Historia: una noche cualquiera (se mueve con el scroll) -->
   <section class="story" id="historia" aria-labelledby="t-story">
@@ -153,96 +156,15 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     </div>
   </section>
 
-  <!-- 3. Demo con selector de oficio -->
-  <section class="sec" id="demo" aria-labelledby="t-demo">
-    <div class="wrap demo-grid">
-      <div>
-        <h2 id="t-demo">Escribe tu nombre y elige tu estilo</h2>
-        <p class="lead">Es una demo con datos inventados. Tu web llevaría tu nombre, tu zona, tus fotos y los colores y las letras que quieras.</p>
-        <div class="pick">
-          <label class="pick-t" for="bizName">El nombre de tu negocio</label>
-          <input class="biz" id="bizName" type="text" maxlength="26" placeholder="Escríbelo aquí" autocomplete="off">
-          <p class="pick-t" id="pk-estilo">Estilo</p>
-          <div class="chips" role="group" aria-labelledby="pk-estilo">
-            <button class="chip" type="button" data-style="nuven" aria-pressed="true">Blanco y negro</button>
-            <button class="chip" type="button" data-style="limpio" aria-pressed="false">Claro y limpio</button>
-            <button class="chip" type="button" data-style="industrial" aria-pressed="false">Industrial</button>
-            <button class="chip" type="button" data-style="elegante" aria-pressed="false">Elegante</button>
-            <button class="chip" type="button" data-style="vivo" aria-pressed="false">Color vivo</button>
-          </div>
-        </div>
-        <ul class="feat">
-          <li><h3>Pensada para el móvil</h3><p>Tus clientes te buscan desde el teléfono, así que se diseña primero para esa pantalla.</p></li>
-          <li><h3>Teléfono y WhatsApp siempre a la vista</h3><p>Botones fijos para que te llamen o te escriban sin buscar nada.</p></li>
-          <li><h3>Un formulario que abre WhatsApp</h3><p>El cliente rellena tres datos y te llega el mensaje escrito. No guardamos sus datos ni hace falta aviso de cookies.</p></li>
-          <li><h3>Preparada para Google</h3><p>Título, descripción y zona bien puestos para que te encuentren en tu pueblo.</p></li>
-          <li><h3>Ligera y rápida</h3><p>Pesa poco y abre al instante, incluso con poca cobertura.</p></li>
-        </ul>
-      </div>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="ph-screen" id="demoScreen" data-style="nuven">
-            <div class="sc" style="opacity:1">
-              <div class="mw" id="mw" aria-live="polite">
-                <p class="mw-name" data-b="name">Tu negocio</p>
-                <p class="mw-tag" data-b="tag">Una frase que te define</p>
-                <div class="mw-btns"><span class="mw-b w">WhatsApp</span><span class="mw-b">Llamar</span></div>
-                <ul class="mw-list"><li data-b="s1">Tu primer servicio</li><li data-b="s2">Tu segundo servicio</li><li data-b="s3">Tu tercer servicio</li></ul>
-                <p class="mw-zone" data-b="zone">Tu zona</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3c. Móvil y ordenador -->
-  <section class="sec devices" id="dispositivos" aria-labelledby="t-disp">
-    <div class="wrap dev-grid">
-      <div class="dev-text" data-r>
-        <h2 id="t-disp">Se ve bien en el móvil y en el ordenador</h2>
-        <p class="lead">Tu web se adapta sola a cada pantalla. Y lo más importante: tus clientes ven siempre el botón de llamar y el de WhatsApp.</p>
-        <ul class="ticks">
-          <li>Rápida, también con poca cobertura</li>
-          <li>Letra grande y fácil de leer</li>
-          <li>Pensada para que te escriban, no para que se pierdan</li>
-        </ul>
-      </div>
-      <div class="dev-art">
-        <figure class="neon laptop" data-par="-28" data-r>
-          <img src="assets/img/laptop-movil.webp" width="1200" height="800" alt="Una web de ejemplo vista en un portátil y en un móvil, con el logo de NuvenDigital" loading="lazy" decoding="async">
-        </figure>
-        <div class="neon panel" data-par="46" data-r role="img" aria-label="Gráfico de ejemplo: las visitas al mes van subiendo">
-          <span class="panel-t">Visitas al mes</span><span class="panel-e">Datos de ejemplo</span>
-          <div class="bars" aria-hidden="true"><i style="--h:26%"></i><i style="--h:32%"></i><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:48%"></i><i style="--h:44%"></i><i style="--h:58%"></i><i style="--h:64%"></i><i style="--h:68%"></i><i style="--h:76%"></i><i style="--h:86%"></i><i style="--h:100%"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3d. Conceptos de proyecto -->
-  <section class="sec concepts" id="conceptos" aria-labelledby="t-conc">
-    <div class="wrap">
-      <h2 id="t-conc" data-r>Webs de ejemplo, cada una a su manera</h2>
-      <p class="lead" data-r>Son conceptos de diseño, no clientes. Cada uno tiene su propio estilo: así podría verse tu web.</p>
-    </div>
-    <div class="wrap">
-      <div class="cards" tabindex="0" aria-label="Conceptos de web. Desliza para ver más.">
-        <figure class="neon ccard" data-r><img src="assets/img/c-obra.webp" width="505" height="330" alt="Concepto de web oscura con un titular a la izquierda y una cocina moderna a la derecha" loading="lazy" decoding="async"><figcaption><b>Concepto 1</b><span>Oscuro y cálido</span></figcaption></figure>
-        <figure class="neon ccard" data-r><img src="assets/img/c-terra.webp" width="472" height="335" alt="Concepto de web oscura con un titular a la izquierda y una bota negra y naranja a la derecha" loading="lazy" decoding="async"><figcaption><b>Concepto 2</b><span>Oscuro con acento naranja</span></figcaption></figure>
-        <figure class="neon ccard" data-r><img src="assets/img/c-cogni.webp" width="500" height="320" alt="Concepto de web oscura con un titular a la izquierda y un cerebro hecho de puntos de luz a la derecha" loading="lazy" decoding="async"><figcaption><b>Concepto 3</b><span>Oscuro y tecnológico</span></figcaption></figure>
-        <figure class="neon ccard" data-r><img src="assets/img/c-naturia.webp" width="485" height="345" alt="Concepto de web oscura con un titular a la izquierda y un jardín moderno a la derecha" loading="lazy" decoding="async"><figcaption><b>Concepto 4</b><span>Oscuro y natural</span></figcaption></figure>
-      </div>
-      <p class="fine">Imágenes de ejemplo creadas con IA para enseñar estilos. No son webs de clientes.</p>
-    </div>
-  </section>
-
   <!-- 4. Estilos: la misma web contada en seis estilos, con transición distinta (sección blanca) -->
   <section class="sec paper" id="proyectos" aria-labelledby="t-proyectos">
     <div class="wrap">
       <h2 id="t-proyectos">Cada negocio es distinto, y su web también</h2>
-      <p class="lead">Mira cómo cambia una misma web según el estilo. Desliza, usa las flechas o toca un nombre. La tuya se hace a tu gusto: colores, letra y forma de ser.</p>
+      <p class="lead">Escribe el nombre de tu negocio y mira cómo queda en cada estilo.</p>
+      <div class="pick">
+        <label class="pick-t" for="bizName">El nombre de tu negocio</label>
+        <input class="biz" id="bizName" type="text" maxlength="26" placeholder="Por ejemplo: Bar Marina" autocomplete="off">
+      </div>
     </div>
     <div class="wrap stage-wrap">
       <div class="stage" id="stage" role="group" aria-roledescription="carrusel" aria-label="Estilos de ejemplo">
@@ -251,77 +173,77 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           <div class="deck" id="deck">
           <figure class="slide m1 on" data-name="Claro y cálido" data-who="Cercano y acogedor" data-desc="Colores suaves, formas redondeadas y un botón naranja que invita a pulsar." data-sw="#fbebe1,#f2521b,#1d1d1d" data-url="tunegocio.es">
             <div class="m-c" aria-hidden="true">
-              <span class="m-k">Tu negocio</span>
+              <span class="m-k" data-biz>Tu negocio</span>
               <b class="m-h">Tu web, lista para tus clientes</b>
               <p class="m-p">Cuenta lo que haces, enseña tus mejores fotos y deja que te escriban por WhatsApp.</p>
               <span class="m-t"><b>Servicios</b><b>Fotos</b><b>Contacto</b></span>
               <span class="m-b">Escríbenos</span>
             </div>
-            <div class="m-img" aria-hidden="true"><img src="assets/img/f-kitchen.webp" width="274" height="255" alt="" loading="lazy" decoding="async"></div>
-            <figcaption><b>Claro y cálido.</b> Cercano y acogedor. Colores suaves, formas redondeadas y un botón naranja que invita a pulsar.</figcaption>
+            <div class="m-img" aria-hidden="true"><img src="assets/n9-kitchen.webp" width="274" height="255" alt="" loading="lazy" decoding="async"></div>
+            <figcaption><b>Claro y cálido.</b></figcaption>
           </figure>
           <figure class="slide m2" data-name="Oscuro e industrial" data-who="Fuerte y directo" data-desc="Fondo negro, letra condensada en mayúsculas y un amarillo que se ve de lejos." data-sw="#111315,#fcc204,#8a8a8a" data-url="tunegocio.es">
             <div class="m-c" aria-hidden="true">
-              <span class="m-k">Tu negocio</span>
+              <span class="m-k" data-biz>Tu negocio</span>
               <b class="m-h">Tu web, lista para tus clientes</b>
               <p class="m-p">Cuenta lo que haces, enseña tus mejores fotos y deja que te escriban por WhatsApp.</p>
               <span class="m-t"><b>Servicios</b><b>Fotos</b><b>Contacto</b></span>
               <span class="m-b">Escríbenos</span>
             </div>
-            <div class="m-img" aria-hidden="true"><img src="assets/img/f-shoe.webp" width="244" height="245" alt="" loading="lazy" decoding="async"></div>
-            <figcaption><b>Oscuro e industrial.</b> Fuerte y directo. Fondo negro, letra condensada en mayúsculas y un amarillo que se ve de lejos.</figcaption>
+            <div class="m-img" aria-hidden="true"><img src="assets/n9-shoe.webp" width="244" height="245" alt="" loading="lazy" decoding="async"></div>
+            <figcaption><b>Oscuro e industrial.</b></figcaption>
           </figure>
           <figure class="slide m3" data-name="Elegante y sereno" data-who="Sereno y cuidado" data-desc="Letra con serifa, mucho aire y tonos tierra. Transmite calma y cuidado." data-sw="#f3ece2,#8a6a4a,#2b2420" data-url="tunegocio.es">
             <div class="m-c" aria-hidden="true">
-              <span class="m-k">Tu negocio</span>
+              <span class="m-k" data-biz>Tu negocio</span>
               <b class="m-h">Tu web, lista para tus clientes</b>
               <p class="m-p">Cuenta lo que haces, enseña tus mejores fotos y deja que te escriban por WhatsApp.</p>
               <span class="m-t"><b>Servicios</b><b>Fotos</b><b>Contacto</b></span>
               <span class="m-b">Escríbenos</span>
             </div>
-            <div class="m-img" aria-hidden="true"><img src="assets/img/f-garden.webp" width="270" height="254" alt="" loading="lazy" decoding="async"></div>
-            <figcaption><b>Elegante y sereno.</b> Sereno y cuidado. Letra con serifa, mucho aire y tonos tierra. Transmite calma y cuidado.</figcaption>
+            <div class="m-img" aria-hidden="true"><img src="assets/n9-garden.webp" width="270" height="254" alt="" loading="lazy" decoding="async"></div>
+            <figcaption><b>Elegante y sereno.</b></figcaption>
           </figure>
           <figure class="slide m4" data-name="Vivo y con color" data-who="Alegre y divertido" data-desc="Colores fuertes y formas que se salen de la caja. Cercano, alegre y fácil de recordar." data-sw="#ffd83d,#2f5bff,#ff4d6d" data-url="tunegocio.es">
             <div class="m-c" aria-hidden="true">
-              <span class="m-k">Tu negocio</span>
+              <span class="m-k" data-biz>Tu negocio</span>
               <b class="m-h">Tu web, lista para tus clientes</b>
               <p class="m-p">Cuenta lo que haces, enseña tus mejores fotos y deja que te escriban por WhatsApp.</p>
               <span class="m-t"><b>Servicios</b><b>Fotos</b><b>Contacto</b></span>
               <span class="m-b">Escríbenos</span>
             </div>
-            <div class="m-img" aria-hidden="true"><img src="assets/img/f-house.webp" width="445" height="345" alt="" loading="lazy" decoding="async"></div>
-            <figcaption><b>Vivo y con color.</b> Alegre y divertido. Colores fuertes y formas que se salen de la caja. Cercano, alegre y fácil de recordar.</figcaption>
+            <div class="m-img" aria-hidden="true"><img src="assets/n9-house.webp" width="445" height="345" alt="" loading="lazy" decoding="async"></div>
+            <figcaption><b>Vivo y con color.</b></figcaption>
           </figure>
           <figure class="slide m5" data-name="Técnico y preciso" data-who="Serio y preciso" data-desc="Cuadrícula de plano, letra tipo máquina y un verde de pantalla. Serio y ordenado." data-sw="#06130f,#38f2a5,#d9fff0" data-url="tunegocio.es">
             <div class="m-c" aria-hidden="true">
-              <span class="m-k">Tu negocio</span>
+              <span class="m-k" data-biz>Tu negocio</span>
               <b class="m-h">Tu web, lista para tus clientes</b>
               <p class="m-p">Cuenta lo que haces, enseña tus mejores fotos y deja que te escriban por WhatsApp.</p>
               <span class="m-t"><b>Servicios</b><b>Fotos</b><b>Contacto</b></span>
               <span class="m-b">Escríbenos</span>
             </div>
-            <div class="m-img" aria-hidden="true"><img src="assets/img/f-brain.webp" width="240" height="210" alt="" loading="lazy" decoding="async"></div>
-            <figcaption><b>Técnico y preciso.</b> Serio y preciso. Cuadrícula de plano, letra tipo máquina y un verde de pantalla. Serio y ordenado.</figcaption>
+            <div class="m-img" aria-hidden="true"><img src="assets/n9-brain.webp" width="240" height="210" alt="" loading="lazy" decoding="async"></div>
+            <figcaption><b>Técnico y preciso.</b></figcaption>
           </figure>
           <figure class="slide m6" data-name="Editorial y atrevido" data-who="Atrevido y con carácter" data-desc="Titulares enormes, bordes gruesos y contraste. Para quien quiere destacar." data-sw="#f4f1ea,#111111,#ff5a1f" data-url="tunegocio.es">
             <div class="m-c" aria-hidden="true">
-              <span class="m-k">Tu negocio</span>
+              <span class="m-k" data-biz>Tu negocio</span>
               <b class="m-h">Tu web, lista para tus clientes</b>
               <p class="m-p">Cuenta lo que haces, enseña tus mejores fotos y deja que te escriban por WhatsApp.</p>
               <span class="m-t"><b>Servicios</b><b>Fotos</b><b>Contacto</b></span>
               <span class="m-b">Escríbenos</span>
             </div>
             <div class="m-img" aria-hidden="true"></div>
-            <figcaption><b>Editorial y atrevido.</b> Atrevido y con carácter. Titulares enormes, bordes gruesos y contraste. Para quien quiere destacar.</figcaption>
+            <figcaption><b>Editorial y atrevido.</b></figcaption>
           </figure>
           </div>
         </div>
         <div class="stage-ui" id="stageUi" hidden>
           <div class="stage-cap" aria-live="polite">
             <h3 id="stName">Claro y cálido</h3>
-            <p id="stDesc"></p>
-            <p class="work-style"><span class="sws" id="stSw" aria-hidden="true"></span><span id="stWho"></span></p>
+            <p id="stDesc" hidden></p>
+            <p class="work-style"><span class="sws" id="stSw" aria-hidden="true"></span><span id="stWho" hidden></span></p>
           </div>
           <div class="stage-bar">
             <button class="sbtn" type="button" id="stPrev" aria-label="Estilo anterior">&larr;</button>
@@ -331,83 +253,100 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           </div>
         </div>
       </div>
-      <p class="lead" style="margin-top:1.2rem">Son ejemplos de estilo, no clientes. Las fotos son imágenes de ejemplo hechas con IA; en tu web irán las tuyas, las de tus trabajos reales.</p>
+      <p class="fine">Son ejemplos de estilo. En tu web irán tus fotos y tu nombre.</p>
     </div>
   </section>
 
   <!-- 5. Precios -->
   <section class="sec" id="precios" aria-labelledby="t-precios">
     <div class="wrap">
-      <h2 id="t-precios" data-r>Tu web, hecha y publicada. Sin líos técnicos.</h2>
-      <p class="lead" data-r>Hacemos webs sencillas y cuidadas para negocios: tú nos cuentas qué haces y nosotros nos encargamos del resto. Al final tienes una web que se ve bien en el móvil, con tu teléfono, tu WhatsApp y tus trabajos, a tu nombre y lista para que te encuentren.</p>
+      <h2 id="t-precios" data-r>Precios claros, sin letra pequeña</h2>
+      <p class="lead" data-r>Todos los precios llevan IVA incluido. Te decimos el importe por escrito antes de empezar.</p>
+      <div class="plans">
+        <article class="plan neon" data-r>
+          <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-page"/></svg>
+          <h3>Básica</h3>
+          <p class="plan-d">Una página.</p>
+          <p class="badge">Lanzamiento para los 3 primeros</p>
+          <p class="price">300 € <small>IVA incl.</small></p>
+          <p class="was">Después, 420 €</p>
+          <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20B%C3%A1sica%20de%20300%20%E2%82%AC." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Quiero la Básica</a>
+        </article>
+        <article class="plan plan-main neon" data-r style="--d:.08s">
+          <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pages"/></svg>
+          <h3>Completa</h3>
+          <p class="plan-d">Hasta 5 páginas.</p>
+          <p class="badge">La más elegida</p>
+          <p class="price">710 € <small>IVA incl.</small></p>
+          <p class="was">&nbsp;</p>
+          <a class="btn btn-dark" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20Completa%20%28hasta%205%20p%C3%A1ginas%29." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Quiero la Completa</a>
+        </article>
+        <article class="plan neon" data-r style="--d:.16s">
+          <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg>
+          <h3>A medida</h3>
+          <p class="plan-d">Algo distinto.</p>
+          <p class="badge">Presupuesto por escrito</p>
+          <p class="price">A consultar</p>
+          <p class="was">&nbsp;</p>
+          <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20a%20medida." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Pedir presupuesto</a>
+        </article>
+      </div>
+      <ul class="perks" data-r>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>50 % al empezar y 50 % al entregar</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-edit"/></svg><span>2 rondas de cambios incluidas</span></li>
+        <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg><span>Dominio .es el primer año, a tu nombre</span></li>
+      </ul>
+
       <div class="two">
-        <details class="neon card acc" data-r open><summary>Qué incluye</summary><div class="acc-b">
+        <details class="neon card acc" data-r><summary><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Qué incluye</summary><div class="acc-b">
           <ul class="ticks">
-            <li>Una web adaptada al móvil, con botones para llamar y escribir por WhatsApp</li>
-            <li>Tus servicios, tu zona, tus horarios y tus fotos reales</li>
-            <li>Formulario de contacto que abre WhatsApp con el mensaje ya escrito</li>
+            <li>Web adaptada al móvil, con botones para llamar y escribir por WhatsApp</li>
+            <li>Tus servicios, tu zona, tus horarios y tus fotos</li>
+            <li>Formulario que abre WhatsApp con el mensaje ya escrito</li>
             <li>Cómo llegar (enlace a Google Maps)</li>
             <li>Textos legales básicos (aviso legal y privacidad)</li>
-            <li>Publicación en internet con tu dominio, a tu nombre</li>
+            <li>Publicación con dominio .es el primer año, registrado a tu nombre</li>
             <li>2 rondas de cambios antes de publicar</li>
-            <li>Entrega de todos los archivos y una hoja de instrucciones</li>
+            <li>Todos los archivos y una hoja de instrucciones</li>
           </ul>
         </div></details>
-        <details class="neon card acc" data-r style="--d:.1s"><summary>Qué necesitamos de ti</summary><div class="acc-b">
+        <details class="neon card acc" data-r style="--d:.1s"><summary><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-user"/></svg>Qué necesitamos de ti</summary><div class="acc-b">
           <ul class="ticks">
             <li>Qué haces, en una frase, y en qué zona trabajas</li>
             <li>Tus servicios, tu horario, tu teléfono y tu WhatsApp</li>
-            <li>Fotos reales de tus trabajos (con el móvil sirve)</li>
+            <li>Fotos reales (con el móvil sirve)</li>
             <li>Tu logo, si tienes</li>
-            <li>Opiniones de clientes solo si son reales y tienen su permiso</li>
+            <li>Opiniones de clientes, solo si son reales y con su permiso</li>
           </ul>
         </div></details>
-      </div>
-      <div class="plans">
-        <article class="plan neon" data-r>
-          <h3>Básica</h3>
-          <p class="plan-d">Una página.</p>
-          <p class="price"><span class="tbd">Precio por confirmar</span></p>
-          <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20B%C3%A1sica%20%28una%20p%C3%A1gina%29." rel="noopener">Pedir presupuesto</a>
-        </article>
-        <article class="plan plan-main neon" data-r style="--d:.08s">
-          <h3>Completa</h3>
-          <p class="plan-d">Hasta 5 páginas.</p>
-          <p class="price"><span class="tbd">Precio por confirmar</span></p>
-          <a class="btn btn-dark" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20Completa%20%28hasta%205%20p%C3%A1ginas%29." rel="noopener">Pedir presupuesto</a>
-        </article>
-        <article class="plan neon" data-r style="--d:.16s">
-          <h3>A medida</h3>
-          <p class="plan-d">Algo distinto. Te lo presupuestamos por escrito.</p>
-          <p class="price"><span class="tbd">Precio por confirmar</span></p>
-          <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20a%20medida." rel="noopener">Pedir presupuesto</a>
-        </article>
-      </div>
-      <p class="fine">Precios cerrados, sin letra pequeña. Todo lo que se salga de lo pactado, te lo presupuestamos antes de hacerlo.</p>
-
-      <div class="two two-b">
-        <details class="neon card acc" data-r><summary>Mantenimiento <small>(opcional)</small></summary><div class="acc-b">
-          <p class="price"><span class="tbd">Precio por confirmar</span> <small>al mes</small></p>
-          <p>Una web no se rompe, pero un negocio cambia: horarios, teléfono, servicios, fotos nuevas. Con el mantenimiento nos escribes por WhatsApp lo que quieres cambiar y lo hacemos nosotros. Incluye:</p>
+        <details class="neon card acc" data-r><summary><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>Extras</summary><div class="acc-b">
+          <ul class="xtra">
+            <li><span>Página adicional</span><b>70 €</b></li>
+            <li><span>Segundo idioma</span><b>120 €</b></li>
+            <li><span>Logo</span><b>60 €</b></li>
+            <li><span>Entrega urgente</span><b>+30 %</b></li>
+            <li><span>Hora extra de trabajo</span><b>30 €</b></li>
+          </ul>
+        </div></details>
+        <details class="neon card acc" data-r style="--d:.1s"><summary><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tool"/></svg>Mantenimiento <small>(opcional)</small></summary><div class="acc-b">
+          <p class="price">50 €<small>/mes · IVA incluido · sin permanencia</small></p>
+          <p>Incluye:</p>
           <ul class="ticks">
-            <li>Hasta 1 hora de cambios al mes (textos, horarios, fotos...)</li>
-            <li>Revisar que la web funciona y que el formulario te llega</li>
-            <li>Avisarte cuando toque renovar el dominio</li>
-            <li>Una copia de seguridad de tu web</li>
+            <li>Cambios de contenido (textos, fotos, horarios, precios, datos de contacto) cuando los necesites, dentro de un uso razonable</li>
+            <li>Vigilar que la web y el formulario funcionan</li>
+            <li>Copia de seguridad y aviso de renovación del dominio</li>
             <li>Respuesta en un máximo de 48 horas laborables</li>
           </ul>
-          <p>Sin permanencia: la cancelas cuando quieras avisando con 30 días.</p>
-          <p class="fine">¿No lo quieres? Perfecto. Tu web sigue funcionando igual. Los cambios se cobran uno a uno con un precio cerrado que te decimos antes.</p>
-          <p class="fine">La mensualidad no es el alojamiento de la web. El dominio lo pagas tú al registrador y el hosting lo contratas a tu nombre; hoy la opción que usamos es gratuita, y si algún día cambia, lo decides tú.</p>
+          <p>No incluye (se presupuesta antes): páginas nuevas, rediseños, idiomas o funciones nuevas. Si un mes necesitas muchísimos cambios, lo hablamos antes de cobrarte nada más.</p>
+          <p class="fine">Cancelas cuando quieras avisando con 30 días.</p>
         </div></details>
-        <details class="neon card acc" data-r style="--d:.1s"><summary>Lo que no entra en el precio</summary><div class="acc-b">
-          <p>Para que no haya sorpresas:</p>
+        <details class="neon card acc" data-r><summary><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-ban"/></svg>Lo que no entra</summary><div class="acc-b">
           <ul class="ticks no">
             <li>Tienda online, pagos o reservas</li>
-            <li>Redactar tus textos desde cero, hacer fotos o diseñar tu logo (el logo lo podemos hacer como extra)</li>
+            <li>Redactar tus textos desde cero o hacer fotos (el logo es un extra de 60 €)</li>
             <li>Anuncios o gestión de redes sociales</li>
-            <li>Coste del dominio (lo pagas tú, unos euros al año)</li>
-            <li>Más de 2 rondas de cambios: te decimos el precio antes de hacerlo</li>
+            <li>El dominio a partir del segundo año (te avisamos antes de renovarlo)</li>
+            <li>Más de 2 rondas de cambios: hora extra a 30 €, y te lo decimos antes</li>
           </ul>
         </div></details>
       </div>
@@ -421,27 +360,19 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <div class="faq">
         <details>
           <summary>¿Qué necesito darte para empezar?</summary>
-          <p>Qué haces y en qué zona trabajas, tus servicios, tu horario, tu teléfono y tu WhatsApp, fotos reales de tus trabajos (con el móvil sirve) y tu logo, si tienes. Si te falta algo, te ayudamos a conseguirlo.</p>
-        </details>
-        <details>
-          <summary>¿Necesito saber de informática?</summary>
-          <p>No. Tú nos cuentas lo que haces y nosotros nos encargamos de lo técnico. Al final te entregamos todos los archivos y una hoja de instrucciones.</p>
+          <p>Qué haces y en qué zona, tus servicios, tu horario, tu teléfono y tu WhatsApp, algunas fotos (con el móvil sirve) y tu logo, si tienes. Si te falta algo, te ayudamos a conseguirlo.</p>
         </details>
         <details>
           <summary>¿Y si quiero cambiar algo más adelante?</summary>
-          <p>Escríbenos por WhatsApp y lo vemos. Si prefieres no preocuparte, el mantenimiento incluye hasta 1 hora de cambios al mes. Si no lo contratas, los cambios se cobran uno a uno con un precio cerrado que te decimos antes.</p>
+          <p>Escríbenos por WhatsApp. Con el mantenimiento (50 €/mes) los cambios van incluidos. Sin él, se cobran por horas a 30 € y te decimos el importe antes de hacer nada.</p>
+        </details>
+        <details>
+          <summary>¿La web queda a mi nombre?</summary>
+          <p>Sí. El dominio .es va incluido el primer año y se registra a tu nombre. A partir del segundo año lo renuevas tú, y te avisamos antes de que toque.</p>
         </details>
         <details>
           <summary>¿Trabajáis solo en Girona?</summary>
           <p>Estamos en Roses, pero trabajamos con negocios de cualquier zona porque todo se hace por WhatsApp y teléfono.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto cuesta una web?</summary>
-          <p>Tenemos tres opciones: Básica (una página), Completa (hasta 5 páginas) y A medida. Los precios son cerrados: te decimos el importe por escrito antes de empezar, sin letra pequeña.</p>
-        </details>
-        <details>
-          <summary>¿La web queda a mi nombre?</summary>
-          <p>Sí. El dominio lo pagas tú al registrador y el hosting lo contratas a tu nombre. Hoy la opción que usamos es gratuita, y si algún día cambia, lo decides tú.</p>
         </details>
       </div>
     </div>
@@ -452,16 +383,11 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     <div class="wrap contact">
       <div>
         <h2 id="t-contacto">Cuéntanos qué necesitas</h2>
-        <p class="lead">Rellena el formulario y se abrirá WhatsApp con tu mensaje ya escrito. Solo tienes que enviarlo.</p>
-        <ol class="next">
-          <li>Te respondemos por WhatsApp.</li>
-          <li>Te enseñamos un borrador en tu propio móvil.</li>
-          <li>Lo ajustamos contigo y la publicamos.</li>
-        </ol>
+        <p class="lead">Rellena el formulario y se abrirá WhatsApp con tu mensaje ya escrito.</p>
         <dl class="info">
-          <div><dt>WhatsApp y teléfono</dt><dd><a href="tel:+34625088206">+34 625 08 82 06</a></dd></div>
-          <div><dt>Correo</dt><dd><a href="mailto:hola@nuvendigital.com">hola@nuvendigital.com</a></dd></div>
-          <div><dt>Dónde estamos</dt><dd>Roses (Girona)</dd></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg><dt>WhatsApp y teléfono</dt><dd><a href="tel:+34625088206">+34 625 08 82 06</a></dd></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><dt>Correo</dt><dd><a href="mailto:hola@nuvendigital.com">hola@nuvendigital.com</a></dd></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><dt>Dónde estamos</dt><dd>Roses (Girona)</dd></div>
         </dl>
       </div>
       <form class="form neon" id="waForm" action="https://wa.me/34625088206" method="get" novalidate>
@@ -479,7 +405,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           <label for="f-msg">¿Qué necesitas? <small>(opcional)</small></label>
           <textarea id="f-msg" name="mensaje" rows="3"></textarea>
         </div>
-        <button class="btn btn-wa" type="submit">Abrir WhatsApp con mi mensaje</button>
+        <button class="btn btn-wa" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Abrir WhatsApp con mi mensaje</button>
         <p class="fine">Al pulsar se abrirá WhatsApp. Esta web no guarda tus datos. Más información en la <a href="privacidad.html">política de privacidad</a>.</p>
       </form>
     </div>
@@ -493,17 +419,17 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <img class="mk" src="assets/logo-mark.webp" width="40" height="32" alt="">
       <img class="wm" src="assets/logo-wordmark.svg" width="96" height="27" alt="">
     </a>
-    <p>Webs sencillas y profesionales para todo tipo de negocios.</p>
+    <p>Tu negocio, a un toque de tus clientes.</p>
     <p><a href="privacidad.html">Política de privacidad</a></p>
     <p class="copy">© 2026 NuvenDigital</p>
   </div>
 </footer>
 
 <div class="dock">
-  <a class="btn btn-ghost" href="tel:+34625088206">Llamar</a>
-  <a class="btn btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">WhatsApp</a>
+  <a class="btn btn-ghost" href="tel:+34625088206"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Llamar</a>
+  <a class="btn btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>WhatsApp</a>
 </div>
 
-<script src="js/main.v9.js" defer></script>
+<script src="js/main.v10.js" defer></script>
 </body>
 </html>
