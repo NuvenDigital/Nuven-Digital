@@ -56,6 +56,7 @@
     var W = 0, H = 0, S = 38, cols = 0, rows = 0;
     var lx = 0, ly = 0, vis = true, running = false, last = 0;
     var coarse = !finePointer;
+    var gi = hero.querySelector(".giant"), gl = 0, gt = 0;
 
     var size = function () {
       var r = hero.getBoundingClientRect();
@@ -66,6 +67,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       cols = Math.ceil(W / S) + 1; rows = Math.ceil(H / S) + 1;
       if (!lx && !ly) { lx = W * 0.7; ly = H * 0.45; }
+      if (gi) { gl = gi.offsetLeft; gt = gi.offsetTop; }
     };
 
     var draw = function (t) {
@@ -113,6 +115,7 @@
         gy2 = H * (0.5 + 0.36 * Math.sin(t / 2000 + 1));
       }
       lx += (gx2 - lx) * 0.12; ly += (gy2 - ly) * 0.12;
+      if (gi) { gi.style.setProperty("--gx", (lx - gl).toFixed(0) + "px"); gi.style.setProperty("--gy", (ly - gt).toFixed(0) + "px"); }
       draw(t);
       requestAnimationFrame(loop);
     };
@@ -197,6 +200,144 @@
         if (st && screen) screen.setAttribute("data-style", st);
       });
     });
+  }
+
+  /* ---------- Estilos: la misma web, seis estilos, una transición distinta cada uno ---------- */
+  var deck = document.getElementById("deck");
+  if (deck) {
+    var slides = Array.prototype.slice.call(deck.querySelectorAll(".slide"));
+    var ui = document.getElementById("stageUi");
+    var tabs = Array.prototype.slice.call(document.querySelectorAll("#stTabs .tab"));
+    var elName = document.getElementById("stName"), elDesc = document.getElementById("stDesc");
+    var elWho = document.getElementById("stWho"), elSw = document.getElementById("stSw"), elUrl = document.getElementById("stUrl");
+    var cur = 0, timer = null, cleanT = null, paused = reduce, userTouched = false, inView = false;
+    var playBtn = document.getElementById("stPlay");
+    ui.hidden = false;
+    var show = function (n, fromUser) {
+      n = (n + slides.length) % slides.length;
+      if (n === cur) return;
+      clearTimeout(cleanT);
+      slides.forEach(function (s, i) { if (i !== n && i !== cur) s.classList.remove("on", "in", "out"); });
+      slides[cur].classList.remove("on", "in"); slides[cur].classList.add("out");
+      slides[n].classList.remove("out"); slides[n].classList.add("on", "in");
+      var old = cur; cur = n;
+      cleanT = setTimeout(function () { slides[old].classList.remove("out"); slides[cur].classList.remove("in"); }, 1100);
+      var d = slides[n].dataset;
+      elName.textContent = d.name; elDesc.textContent = d.desc; elWho.textContent = d.who + ". Ejemplo de estilo.";
+      elUrl.textContent = d.url;
+      paintSw(d.sw);
+      tabs.forEach(function (t, i) { if (i === n) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current"); });
+      if (tabs[n].scrollIntoView && fromUser) tabs[n].scrollIntoView({ block: "nearest", inline: "nearest" });
+      if (fromUser) { userTouched = true; stop(); }
+    };
+    var paintSw = function (list) {
+      elSw.textContent = "";
+      list.split(",").forEach(function (c) { var i = document.createElement("i"); i.style.setProperty("--c", c); elSw.appendChild(i); });
+    };
+    var start = function () { if (timer || paused || userTouched || !inView || reduce) return; timer = setInterval(function () { show(cur + 1, false); }, 5200); };
+    var stop = function () { clearInterval(timer); timer = null; };
+    elDesc.textContent = slides[0].dataset.desc; elWho.textContent = slides[0].dataset.who + ". Ejemplo de estilo."; paintSw(slides[0].dataset.sw);
+    document.getElementById("stPrev").addEventListener("click", function () { show(cur - 1, true); });
+    document.getElementById("stNext").addEventListener("click", function () { show(cur + 1, true); });
+    tabs.forEach(function (t, i) { t.addEventListener("click", function () { show(i, true); }); });
+    if (reduce) { playBtn.hidden = true; }
+    playBtn.addEventListener("click", function () {
+      paused = !paused; userTouched = false;
+      playBtn.setAttribute("aria-pressed", String(paused));
+      playBtn.setAttribute("aria-label", paused ? "Reanudar el cambio automático" : "Pausar el cambio automático");
+      playBtn.innerHTML = paused ? "&#9654;" : "&#10074;&#10074;";
+      if (paused) stop(); else start();
+    });
+    // Deslizar con el dedo o el ratón
+    var sx = null, sy = 0;
+    deck.addEventListener("pointerdown", function (e) { sx = e.clientX; sy = e.clientY; });
+    deck.addEventListener("pointerup", function (e) {
+      if (sx === null) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.4) show(cur + (dx < 0 ? 1 : -1), true);
+    });
+    deck.addEventListener("pointercancel", function () { sx = null; });
+    var stage = document.getElementById("stage");
+    stage.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { show(cur + 1, true); } else if (e.key === "ArrowLeft") { show(cur - 1, true); }
+    });
+    stage.addEventListener("mouseenter", stop);
+    stage.addEventListener("mouseleave", start);
+    stage.addEventListener("focusin", stop);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (inView) start(); else stop(); }, { threshold: 0.5 }).observe(stage);
+    }
+  }
+
+  /* ---------- Scroll: aparición, frase que se ilumina, parallax ---------- */
+  var vh0 = function () { return window.innerHeight || 800; };
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll("[data-r]"));
+  if (!reduce && "IntersectionObserver" in window && revealEls.length) {
+    root.classList.add("rv");
+    var ro = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealEls.forEach(function (el) { ro.observe(el); });
+    Array.prototype.forEach.call(document.querySelectorAll(".bars i"), function (b, i) { b.style.transitionDelay = (i % 12) * 55 + "ms"; });
+  }
+
+  var lit = document.querySelector("[data-lit]");
+  var words = [];
+  if (lit && !reduce) {
+    var txt = lit.textContent.trim().split(/\s+/);
+    lit.setAttribute("aria-label", lit.textContent.trim());
+    lit.textContent = "";
+    txt.forEach(function (t, i) {
+      var sp = document.createElement("span"); sp.className = "w"; sp.textContent = t; sp.setAttribute("aria-hidden", "true");
+      lit.appendChild(sp); if (i < txt.length - 1) lit.appendChild(document.createTextNode(" "));
+      words.push(sp);
+    });
+    lit.classList.add("lit-on");
+  }
+  var pars = Array.prototype.slice.call(document.querySelectorAll("[data-par]"));
+  var heroEl = document.getElementById("inicio"), giantEl = document.querySelector(".giant");
+  var sTick = false;
+  var scrollFx = function () {
+    sTick = false;
+    var vh = vh0();
+    if (words.length) {
+      var r = lit.getBoundingClientRect();
+      var p = clamp((vh * 0.82 - r.top) / (r.height + vh * 0.35), 0, 1);
+      var n = Math.round(p * words.length);
+      for (var i = 0; i < words.length; i++) words[i].classList.toggle("on", i < n);
+    }
+    if (!reduce) {
+      for (var k = 0; k < pars.length; k++) {
+        var b = pars[k].getBoundingClientRect();
+        if (b.bottom < -200 || b.top > vh + 200) continue;
+        var off = b.top + b.height / 2 - vh / 2;
+        pars[k].style.setProperty("--py", (off * parseFloat(pars[k].getAttribute("data-par")) / -400).toFixed(1) + "px");
+      }
+    }
+  };
+  if (words.length || pars.length) {
+    var reqFx = function () { if (!sTick) { sTick = true; requestAnimationFrame(scrollFx); } };
+    addEventListener("scroll", reqFx, { passive: true });
+    addEventListener("resize", reqFx);
+    scrollFx();
+  }
+
+  /* ---------- Neón: el contorno se enciende donde está el cursor ---------- */
+  if (finePointer && !reduce) {
+    var neons = Array.prototype.slice.call(document.querySelectorAll(".neon, .btn-ghost, .btn-wa"));
+    var nTick = false, nx = 0, ny = 0;
+    var paintNeon = function () {
+      nTick = false;
+      var vh = vh0();
+      for (var i = 0; i < neons.length; i++) {
+        var r = neons[i].getBoundingClientRect();
+        if (r.bottom < -300 || r.top > vh + 300) continue;
+        neons[i].style.setProperty("--mx", (nx - r.left).toFixed(0) + "px");
+        neons[i].style.setProperty("--my", (ny - r.top).toFixed(0) + "px");
+      }
+    };
+    addEventListener("pointermove", function (e) { nx = e.clientX; ny = e.clientY; if (!nTick) { nTick = true; requestAnimationFrame(paintNeon); } }, { passive: true });
+    addEventListener("scroll", function () { if (hasPointer && !nTick) { nTick = true; requestAnimationFrame(paintNeon); } }, { passive: true });
   }
 
   /* ---------- Formulario: abre WhatsApp con el mensaje escrito ---------- */

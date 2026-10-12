@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://nuvendigital.com/assets/og-image.png">
 <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=8">
 <script>
 /* js: hay JavaScript. rm: la persona pidió reducir movimiento. live: la historia se mueve con el scroll.
    La intro se ve una vez por sesión y nunca con "reducir movimiento". */
@@ -33,7 +33,7 @@ if(rm){d.classList.add("rm")}else{if(innerHeight>=560)d.classList.add("live");
 try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch(e){}}})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"NuvenDigital","description":"Webs sencillas y profesionales para negocios locales y oficios.","url":"https://nuvendigital.com/","telephone":"+34600000000","email":"hola@nuvendigital.com","areaServed":"España","address":{"@type":"PostalAddress","addressLocality":"Roses","addressRegion":"Girona","addressCountry":"ES"}}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"NuvenDigital","description":"Webs sencillas y profesionales para negocios locales y oficios.","url":"https://nuvendigital.com/","telephone":"+34625088206","email":"hola@nuvendigital.com","areaServed":"España","address":{"@type":"PostalAddress","addressLocality":"Roses","addressRegion":"Girona","addressCountry":"ES"}}
 </script>
 </head>
 <body>
@@ -59,13 +59,14 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <img class="wm" src="assets/logo-wordmark.svg" width="96" height="27" alt="">
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#historia">Una noche cualquiera</a>
+      <a href="#historia">Historia</a>
       <a href="#demo">Pruébala</a>
-      <a href="#proyectos">Proyectos</a>
+      <a href="#conceptos">Proyectos</a>
+      <a href="#proyectos">Estilos</a>
       <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn btn-sm btn-wa" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Hablamos</a>
+    <a class="btn btn-sm btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Hablamos</a>
   </div>
 </header>
 
@@ -78,13 +79,15 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <h1 class="hero-title">Tu negocio merece una web que haga sonar el teléfono.</h1>
       <p class="hero-sub">Hacemos webs sencillas y profesionales para reformistas, fontaneros, electricistas y pintores. Se ven bien en el móvil, cargan rápido y tu WhatsApp está siempre a un toque.</p>
       <div class="hero-cta">
-        <a class="btn btn-wa" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Pedir presupuesto por WhatsApp</a>
-        <a class="btn btn-ghost" href="tel:+34600000000">Llamar al +34 600 000 000</a>
+        <a class="btn btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Pedir presupuesto por WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+34625088206">Llamar al +34 625 08 82 06</a>
       </div>
       <p class="hero-note">Somos un equipo pequeño de Roses, en Girona. Hablas directo con quien te hace la web.</p>
     </div>
-    <div class="giant" aria-hidden="true"><img src="assets/logo-wordmark.svg" width="490" height="138" alt=""></div>
+    <div class="giant" aria-hidden="true"><img class="g1" src="assets/logo-wordmark.svg" width="490" height="138" alt=""><img class="g2" src="assets/logo-wordmark.svg" width="490" height="138" alt=""></div>
   </section>
+
+  <div class="marquee" aria-hidden="true"><div class="mq-track"><span>Reformistas</span><span>Fontaneros</span><span>Electricistas</span><span>Pintores</span><span>Cerrajeros</span><span>Instaladores</span><span>Reformistas</span><span>Fontaneros</span><span>Electricistas</span><span>Pintores</span><span>Cerrajeros</span><span>Instaladores</span></div></div>
 
   <!-- 2. Historia: una noche cualquiera (se mueve con el scroll) -->
   <section class="story" id="historia" aria-labelledby="t-story">
@@ -199,6 +202,54 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     </div>
   </section>
 
+  <!-- 3b. Frase que se ilumina al hacer scroll -->
+  <section class="sec statement" aria-label="Lo que hace una buena web">
+    <div class="wrap">
+      <p class="lit" data-lit>Una buena web no vende palabras bonitas: consigue que te escriban cuando te necesitan.</p>
+    </div>
+  </section>
+
+  <!-- 3c. Móvil y ordenador -->
+  <section class="sec devices" id="dispositivos" aria-labelledby="t-disp">
+    <div class="wrap dev-grid">
+      <div class="dev-text" data-r>
+        <h2 id="t-disp">Se ve bien en el móvil y en el ordenador</h2>
+        <p class="lead">Tu web se adapta sola a cada pantalla. Y lo más importante: tus clientes ven siempre el botón de llamar y el de WhatsApp.</p>
+        <ul class="ticks">
+          <li>Rápida, también con poca cobertura</li>
+          <li>Letra grande y fácil de leer</li>
+          <li>Pensada para que te escriban, no para que se pierdan</li>
+        </ul>
+      </div>
+      <div class="dev-art">
+        <figure class="neon laptop" data-par="-28" data-r>
+          <img src="assets/img/laptop-movil.webp" width="1200" height="800" alt="Una web de ejemplo vista en un portátil y en un móvil, con el logo de NuvenDigital" loading="lazy" decoding="async">
+        </figure>
+        <div class="neon panel" data-par="46" data-r role="img" aria-label="Gráfico de ejemplo: las visitas al mes van subiendo">
+          <span class="panel-t">Visitas al mes</span><span class="panel-e">Datos de ejemplo</span>
+          <div class="bars" aria-hidden="true"><i style="--h:26%"></i><i style="--h:32%"></i><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:48%"></i><i style="--h:44%"></i><i style="--h:58%"></i><i style="--h:64%"></i><i style="--h:68%"></i><i style="--h:76%"></i><i style="--h:86%"></i><i style="--h:100%"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3d. Conceptos de proyecto -->
+  <section class="sec concepts" id="conceptos" aria-labelledby="t-conc">
+    <div class="wrap">
+      <h2 id="t-conc" data-r>Webs de ejemplo para negocios muy distintos</h2>
+      <p class="lead" data-r>Son conceptos de diseño, no clientes. Así podrían verse la web de una empresa de reformas, una tienda, una tecnológica o un jardinero.</p>
+    </div>
+    <div class="wrap">
+      <div class="cards">
+        <figure class="neon ccard" data-par="-24" data-r><img src="assets/img/c-obra.webp" width="505" height="330" alt="Concepto de web para una empresa de reformas: titular «Tu hogar, como siempre lo imaginaste» sobre una cocina moderna" loading="lazy" decoding="async"><figcaption><b>ObraÉlite</b><span>Concepto · Empresa de reformas</span></figcaption></figure>
+        <figure class="neon ccard" data-par="30" data-r><img src="assets/img/c-terra.webp" width="472" height="335" alt="Concepto de web para una tienda de calzado de trabajo, con una bota negra y naranja" loading="lazy" decoding="async"><figcaption><b>TerraWork</b><span>Concepto · Tienda online de calzado</span></figcaption></figure>
+        <figure class="neon ccard" data-par="-12" data-r><img src="assets/img/c-cogni.webp" width="500" height="320" alt="Concepto de web para una empresa tecnológica, con un cerebro hecho de puntos de luz" loading="lazy" decoding="async"><figcaption><b>CognitivaAI</b><span>Concepto · Plataforma tecnológica</span></figcaption></figure>
+        <figure class="neon ccard" data-par="40" data-r><img src="assets/img/c-naturia.webp" width="485" height="345" alt="Concepto de web de jardinería y paisajismo, con un jardín moderno" loading="lazy" decoding="async"><figcaption><b>Naturia</b><span>Concepto · Jardinería y paisajismo</span></figcaption></figure>
+      </div>
+      <p class="fine">Imágenes de ejemplo creadas con IA para enseñar estilos. No son webs de clientes.</p>
+    </div>
+  </section>
+
   <!-- 4. Estilos: la misma web contada en seis estilos, con transición distinta (sección blanca) -->
   <section class="sec paper" id="proyectos" aria-labelledby="t-proyectos">
     <div class="wrap">
@@ -218,7 +269,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
               <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
               <span class="m-b">Pedir presupuesto</span>
             </div>
-            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-1.webp" alt="" width="960" height="720"&gt; --></div>
+            <div class="m-img" aria-hidden="true"><img src="assets/img/f-kitchen.webp" width="274" height="255" alt="" loading="lazy" decoding="async"></div>
             <figcaption><b>Claro y cálido.</b> Reformas, pintura, interiorismo. Colores suaves, formas redondeadas y un botón naranja que invita a pulsar.</figcaption>
           </figure>
           <figure class="slide m2" data-name="Oscuro e industrial" data-who="Fontanería, cerrajería, mecánica" data-desc="Fondo negro, letra condensada en mayúsculas y un amarillo que se ve de lejos." data-sw="#111315,#fcc204,#8a8a8a" data-url="tufontanero.es">
@@ -229,7 +280,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
               <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
               <span class="m-b">Pedir presupuesto</span>
             </div>
-            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-2.webp" alt="" width="960" height="720"&gt; --></div>
+            <div class="m-img" aria-hidden="true"><img src="assets/img/f-shoe.webp" width="244" height="245" alt="" loading="lazy" decoding="async"></div>
             <figcaption><b>Oscuro e industrial.</b> Fontanería, cerrajería, mecánica. Fondo negro, letra condensada en mayúsculas y un amarillo que se ve de lejos.</figcaption>
           </figure>
           <figure class="slide m3" data-name="Elegante y sereno" data-who="Arquitectura, decoración, estética" data-desc="Letra con serifa, mucho aire y tonos tierra. Transmite calma y cuidado." data-sw="#f3ece2,#8a6a4a,#2b2420" data-url="tuestudio.es">
@@ -240,7 +291,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
               <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
               <span class="m-b">Pedir presupuesto</span>
             </div>
-            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-3.webp" alt="" width="960" height="720"&gt; --></div>
+            <div class="m-img" aria-hidden="true"><img src="assets/img/f-garden.webp" width="270" height="254" alt="" loading="lazy" decoding="async"></div>
             <figcaption><b>Elegante y sereno.</b> Arquitectura, decoración, estética. Letra con serifa, mucho aire y tonos tierra. Transmite calma y cuidado.</figcaption>
           </figure>
           <figure class="slide m4" data-name="Vivo y con color" data-who="Electricistas, limpieza, mudanzas" data-desc="Colores fuertes y formas que se salen de la caja. Cercano, alegre y fácil de recordar." data-sw="#ffd83d,#2f5bff,#ff4d6d" data-url="tuelectricista.es">
@@ -251,7 +302,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
               <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
               <span class="m-b">Pedir presupuesto</span>
             </div>
-            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-4.webp" alt="" width="960" height="720"&gt; --></div>
+            <div class="m-img" aria-hidden="true"><img src="assets/img/f-house.webp" width="445" height="345" alt="" loading="lazy" decoding="async"></div>
             <figcaption><b>Vivo y con color.</b> Electricistas, limpieza, mudanzas. Colores fuertes y formas que se salen de la caja. Cercano, alegre y fácil de recordar.</figcaption>
           </figure>
           <figure class="slide m5" data-name="Técnico y preciso" data-who="Instalaciones, ingenierías, domótica" data-desc="Cuadrícula de plano, letra tipo máquina y un verde de pantalla. Serio y ordenado." data-sw="#06130f,#38f2a5,#d9fff0" data-url="tuinstalador.es">
@@ -262,7 +313,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
               <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
               <span class="m-b">Pedir presupuesto</span>
             </div>
-            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-5.webp" alt="" width="960" height="720"&gt; --></div>
+            <div class="m-img" aria-hidden="true"><img src="assets/img/f-brain.webp" width="240" height="210" alt="" loading="lazy" decoding="async"></div>
             <figcaption><b>Técnico y preciso.</b> Instalaciones, ingenierías, domótica. Cuadrícula de plano, letra tipo máquina y un verde de pantalla. Serio y ordenado.</figcaption>
           </figure>
           <figure class="slide m6" data-name="Editorial y atrevido" data-who="Estudios, tiendas, marcas con carácter" data-desc="Titulares enormes, bordes gruesos y contraste. Para quien quiere destacar." data-sw="#f4f1ea,#111111,#ff5a1f" data-url="tumarca.es">
@@ -273,7 +324,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
               <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
               <span class="m-b">Pedir presupuesto</span>
             </div>
-            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-6.webp" alt="" width="960" height="720"&gt; --></div>
+            <div class="m-img" aria-hidden="true"></div>
             <figcaption><b>Editorial y atrevido.</b> Estudios, tiendas, marcas con carácter. Titulares enormes, bordes gruesos y contraste. Para quien quiere destacar.</figcaption>
           </figure>
           </div>
@@ -292,53 +343,90 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           </div>
         </div>
       </div>
-      <p class="lead" style="margin-top:1.2rem">Son ejemplos de estilo, no clientes. Las fotos de cada web las ponemos contigo.</p>
+      <p class="lead" style="margin-top:1.2rem">Son ejemplos de estilo, no clientes. Las fotos son imágenes de ejemplo hechas con IA; en tu web irán las tuyas, las de tus trabajos reales.</p>
     </div>
   </section>
 
   <!-- 5. Precios -->
   <section class="sec" id="precios" aria-labelledby="t-precios">
     <div class="wrap">
-      <h2 id="t-precios">Precios claros</h2>
-      <p class="lead">Dos formas de empezar y una para que no te preocupes de nada después.</p>
+      <h2 id="t-precios" data-r>Tu web, hecha y publicada. Sin líos técnicos.</h2>
+      <p class="lead" data-r>Hacemos webs sencillas y cuidadas para negocios y oficios: tú nos cuentas qué haces y nosotros nos encargamos del resto. Al final tienes una web que se ve bien en el móvil, con tu teléfono, tu WhatsApp y tus trabajos, a tu nombre y lista para que te encuentren.</p>
+      <div class="two">
+        <div class="neon card" data-r>
+          <h3>Qué incluye</h3>
+          <ul class="ticks">
+            <li>Una web adaptada al móvil, con botones para llamar y escribir por WhatsApp</li>
+            <li>Tus servicios, tu zona, tus horarios y tus fotos reales</li>
+            <li>Formulario de contacto que abre WhatsApp con el mensaje ya escrito</li>
+            <li>Cómo llegar (enlace a Google Maps)</li>
+            <li>Textos legales básicos (aviso legal y privacidad)</li>
+            <li>Publicación en internet con tu dominio, a tu nombre</li>
+            <li>2 rondas de cambios antes de publicar</li>
+            <li>Entrega de todos los archivos y una hoja de instrucciones</li>
+          </ul>
+        </div>
+        <div class="neon card" data-r style="--d:.1s">
+          <h3>Qué necesitamos de ti</h3>
+          <ul class="ticks">
+            <li>Qué haces, en una frase, y en qué zona trabajas</li>
+            <li>Tus servicios, tu horario, tu teléfono y tu WhatsApp</li>
+            <li>Fotos reales de tus trabajos (con el móvil sirve)</li>
+            <li>Tu logo, si tienes</li>
+            <li>Opiniones de clientes solo si son reales y tienen su permiso</li>
+          </ul>
+        </div>
+      </div>
       <div class="plans">
-        <article class="plan">
-          <h3>Una página</h3>
-          <p class="price"><span>000 €</span></p>
-          <p class="plan-d">Todo lo importante en una sola página: servicios, zonas y contacto.</p>
-          <ul>
-            <li>Diseño para móvil y ordenador</li>
-            <li>Botones de WhatsApp y teléfono</li>
-            <li>Formulario que abre WhatsApp</li>
-            <li>Preparada para Google</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20el%20plan%20Una%20p%C3%A1gina." rel="noopener">Quiero este plan</a>
+        <article class="plan neon" data-r>
+          <h3>Básica</h3>
+          <p class="plan-d">Una página.</p>
+          <p class="price"><span class="tbd">Precio por confirmar</span></p>
+          <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20B%C3%A1sica%20%28una%20p%C3%A1gina%29." rel="noopener">Pedir presupuesto</a>
         </article>
-        <article class="plan plan-main">
-          <h3>Web completa</h3>
-          <p class="price"><span>000 €</span></p>
-          <p class="plan-d">Para negocios con varios servicios o varias zonas.</p>
-          <ul>
-            <li>Todo lo del plan anterior</li>
-            <li>Una página por servicio</li>
-            <li>Galería de trabajos</li>
-            <li>Preguntas frecuentes</li>
-          </ul>
-          <a class="btn btn-dark" href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20el%20plan%20Web%20completa." rel="noopener">Quiero este plan</a>
+        <article class="plan plan-main neon" data-r style="--d:.08s">
+          <h3>Completa</h3>
+          <p class="plan-d">Hasta 5 páginas.</p>
+          <p class="price"><span class="tbd">Precio por confirmar</span></p>
+          <a class="btn btn-dark" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20Completa%20%28hasta%205%20p%C3%A1ginas%29." rel="noopener">Pedir presupuesto</a>
         </article>
-        <article class="plan">
-          <h3>Mantenimiento</h3>
-          <p class="price"><span>00 €</span> <small>al mes</small></p>
-          <p class="plan-d">Nosotros nos encargamos de los cambios para que tú trabajes.</p>
-          <ul>
-            <li>Cambios de textos y fotos</li>
-            <li>Revisión de que todo funciona</li>
-            <li>Respuesta por WhatsApp</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20el%20mantenimiento." rel="noopener">Quiero este plan</a>
+        <article class="plan neon" data-r style="--d:.16s">
+          <h3>A medida</h3>
+          <p class="plan-d">Algo distinto. Te lo presupuestamos por escrito.</p>
+          <p class="price"><span class="tbd">Precio por confirmar</span></p>
+          <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20a%20medida." rel="noopener">Pedir presupuesto</a>
         </article>
       </div>
-      <p class="fine">Los precios no incluyen IVA. Dominio y hosting, aparte si los necesitas; te lo explicamos antes de empezar.</p>
+      <p class="fine">Precios cerrados, sin letra pequeña. Todo lo que se salga de lo pactado, te lo presupuestamos antes de hacerlo.</p>
+
+      <div class="two two-b">
+        <div class="neon card" data-r>
+          <h3>Mantenimiento <small>(opcional)</small></h3>
+          <p class="price"><span class="tbd">Precio por confirmar</span> <small>al mes</small></p>
+          <p>Una web no se rompe, pero un negocio cambia: horarios, teléfono, servicios, fotos nuevas. Con el mantenimiento nos escribes por WhatsApp lo que quieres cambiar y lo hacemos nosotros. Incluye:</p>
+          <ul class="ticks">
+            <li>Hasta 1 hora de cambios al mes (textos, horarios, fotos...)</li>
+            <li>Revisar que la web funciona y que el formulario te llega</li>
+            <li>Avisarte cuando toque renovar el dominio</li>
+            <li>Una copia de seguridad de tu web</li>
+            <li>Respuesta en un máximo de 48 horas laborables</li>
+          </ul>
+          <p>Sin permanencia: la cancelas cuando quieras avisando con 30 días.</p>
+          <p class="fine">¿No lo quieres? Perfecto. Tu web sigue funcionando igual. Los cambios se cobran uno a uno con un precio cerrado que te decimos antes.</p>
+          <p class="fine">La mensualidad no es el alojamiento de la web. El dominio lo pagas tú al registrador y el hosting lo contratas a tu nombre; hoy la opción que usamos es gratuita, y si algún día cambia, lo decides tú.</p>
+        </div>
+        <div class="neon card" data-r style="--d:.1s">
+          <h3>Lo que no entra en el precio</h3>
+          <p>Para que no haya sorpresas:</p>
+          <ul class="ticks no">
+            <li>Tienda online, pagos o reservas</li>
+            <li>Redactar tus textos desde cero, hacer fotos o diseñar tu logo (el logo lo podemos hacer como extra)</li>
+            <li>Anuncios o gestión de redes sociales</li>
+            <li>Coste del dominio (lo pagas tú, unos euros al año)</li>
+            <li>Más de 2 rondas de cambios: te decimos el precio antes de hacerlo</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -349,15 +437,15 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <div class="faq">
         <details>
           <summary>¿Qué necesito darte para empezar?</summary>
-          <p>Tu logo si lo tienes, unas cuantas fotos de trabajos, tu teléfono y las zonas donde trabajas. Si te falta algo, te ayudamos a conseguirlo.</p>
+          <p>Qué haces y en qué zona trabajas, tus servicios, tu horario, tu teléfono y tu WhatsApp, fotos reales de tus trabajos (con el móvil sirve) y tu logo, si tienes. Si te falta algo, te ayudamos a conseguirlo.</p>
         </details>
         <details>
           <summary>¿Necesito saber de informática?</summary>
-          <p>No. Tú nos cuentas lo que haces y nosotros nos encargamos de lo técnico. Después te explicamos lo básico para que puedas cambiar un teléfono o un horario.</p>
+          <p>No. Tú nos cuentas lo que haces y nosotros nos encargamos de lo técnico. Al final te entregamos todos los archivos y una hoja de instrucciones.</p>
         </details>
         <details>
           <summary>¿Y si quiero cambiar algo más adelante?</summary>
-          <p>Escríbenos por WhatsApp y lo vemos. Si prefieres no preocuparte, el plan de mantenimiento incluye los cambios.</p>
+          <p>Escríbenos por WhatsApp y lo vemos. Si prefieres no preocuparte, el mantenimiento incluye hasta 1 hora de cambios al mes. Si no lo contratas, los cambios se cobran uno a uno con un precio cerrado que te decimos antes.</p>
         </details>
         <details>
           <summary>¿Trabajáis solo en Girona?</summary>
@@ -365,7 +453,11 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
         </details>
         <details>
           <summary>¿Cuánto cuesta una web?</summary>
-          <p>Depende de lo que necesites. Mira los planes de arriba o escríbenos y te damos un presupuesto sin compromiso.</p>
+          <p>Tenemos tres opciones: Básica (una página), Completa (hasta 5 páginas) y A medida. Los precios son cerrados: te decimos el importe por escrito antes de empezar, sin letra pequeña.</p>
+        </details>
+        <details>
+          <summary>¿La web queda a mi nombre?</summary>
+          <p>Sí. El dominio lo pagas tú al registrador y el hosting lo contratas a tu nombre. Hoy la opción que usamos es gratuita, y si algún día cambia, lo decides tú.</p>
         </details>
       </div>
     </div>
@@ -383,12 +475,12 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           <li>Lo ajustamos contigo y la publicamos.</li>
         </ol>
         <dl class="info">
-          <div><dt>WhatsApp y teléfono</dt><dd><a href="tel:+34600000000">+34 600 000 000</a></dd></div>
+          <div><dt>WhatsApp y teléfono</dt><dd><a href="tel:+34625088206">+34 625 08 82 06</a></dd></div>
           <div><dt>Correo</dt><dd><a href="mailto:hola@nuvendigital.com">hola@nuvendigital.com</a></dd></div>
           <div><dt>Dónde estamos</dt><dd>Roses (Girona)</dd></div>
         </dl>
       </div>
-      <form class="form" id="waForm" action="https://wa.me/34600000000" method="get" novalidate>
+      <form class="form" id="waForm" action="https://wa.me/34625088206" method="get" novalidate>
         <div class="field-w">
           <label for="f-nombre">Tu nombre</label>
           <input id="f-nombre" name="nombre" type="text" autocomplete="given-name" required>
@@ -424,10 +516,10 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
 </footer>
 
 <div class="dock">
-  <a class="btn btn-ghost" href="tel:+34600000000">Llamar</a>
-  <a class="btn btn-wa" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">WhatsApp</a>
+  <a class="btn btn-ghost" href="tel:+34625088206">Llamar</a>
+  <a class="btn btn-wa" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">WhatsApp</a>
 </div>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=8" defer></script>
 </body>
 </html>
