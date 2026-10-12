@@ -7,35 +7,62 @@
 <meta name="description" content="Hacemos webs sencillas y profesionales para reformistas, fontaneros, electricistas y pintores. Rápidas en el móvil y con tu WhatsApp siempre a mano.">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://nuvendigital.com/">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="NuvenDigital">
 <meta property="og:title" content="NuvenDigital | Webs sencillas para oficios y negocios locales">
 <meta property="og:description" content="Webs rápidas y profesionales para que tus clientes te encuentren y te escriban por WhatsApp.">
 <meta property="og:url" content="https://nuvendigital.com/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://nuvendigital.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NuvenDigital, webs sencillas y profesionales para negocios locales">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nuvendigital.com/assets/og-image.png">
 <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script>
-/* La intro se ve una vez por sesión y nunca con "reducir movimiento" */
-(function(){var d=document.documentElement;d.classList.add("js");try{if(sessionStorage.getItem("nd-intro")||matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.classList.add("intro-active")}catch(e){}})();
+/* js: hay JavaScript. rm: la persona pidió reducir movimiento. live: la historia se mueve con el scroll.
+   La intro se ve una vez por sesión y nunca con "reducir movimiento". */
+(function(){var d=document.documentElement,rm=false;d.classList.add("js");
+try{rm=matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(rm){d.classList.add("rm")}else{if(innerHeight>=560)d.classList.add("live");
+try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch(e){}}})();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"NuvenDigital","description":"Webs sencillas y profesionales para negocios locales y oficios.","url":"https://nuvendigital.com/","telephone":"+34600000000","email":"hola@nuvendigital.com","areaServed":"España","address":{"@type":"PostalAddress","addressLocality":"Roses","addressRegion":"Girona","addressCountry":"ES"}}
 </script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="nd-l" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f2f2f2"/><stop offset=".6" stop-color="#d6d6d6"/><stop offset="1" stop-color="#8e8e8e"/></linearGradient>
+    <linearGradient id="nd-r" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dedede"/><stop offset=".55" stop-color="#a9a9a9"/><stop offset="1" stop-color="#5e5e5e"/></linearGradient>
+    <linearGradient id="nd-d" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f1f1f1"/><stop offset="1" stop-color="#d9d9d9"/></linearGradient>
+    <symbol id="nd-mark" viewBox="5 3 89 72">
+      <path d="M7.5 17h23.8v41H7.5z" fill="url(#nd-l)"/>
+      <path d="M68.3 19.2h24v40.6h-24z" fill="url(#nd-r)"/>
+      <path d="M7.5 17C7.5 10 13.6 5 21.6 5H27.4C30.2 5 32.2 6 34 7.7L92.3 59.8C92.3 67.4 86.6 72.6 79 72.6H76.6C74.2 72.6 72.5 71.9 70.8 70.4L12.6 18.6C11.1 17.3 9.4 16.9 7.5 17Z" fill="url(#nd-d)"/>
+    </symbol>
+  </defs>
+</svg>
 <a class="skip" href="#main">Saltar al contenido</a>
 
-<!-- Intro: animación del logo, ligera, una vez por sesión -->
+<!-- Intro: un punto de luz se abre en línea y deja ver el logo. Ligera y una vez por sesión. -->
 <div class="intro" id="intro" aria-hidden="true">
-  <div class="intro-inner">
-    <svg class="mark" viewBox="0 0 48 48" width="96" height="96" focusable="false">
-      <path d="M10 38V10l28 28V10" pathLength="1" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="38" cy="10" r="3.2" fill="#fff"/>
+  <div class="i-grid"></div>
+  <span class="i-beam"></span>
+  <span class="i-dot"></span>
+  <div class="i-logo">
+    <svg class="intro-mark" viewBox="5 3 89 72" width="132" height="107" focusable="false">
+      <path d="M7.5 17h23.8v41H7.5z" fill="url(#nd-l)"/>
+      <path d="M68.3 19.2h24v40.6h-24z" fill="url(#nd-r)"/>
+      <path d="M7.5 17C7.5 10 13.6 5 21.6 5H27.4C30.2 5 32.2 6 34 7.7L92.3 59.8C92.3 67.4 86.6 72.6 79 72.6H76.6C74.2 72.6 72.5 71.9 70.8 70.4L12.6 18.6C11.1 17.3 9.4 16.9 7.5 17Z" fill="url(#nd-d)"/>
     </svg>
-    <span class="intro-name">NuvenDigital</span>
+    <span class="intro-name">NUVEN<i>DIGITAL</i></span>
   </div>
 </div>
 
@@ -44,15 +71,12 @@
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="#inicio" aria-label="NuvenDigital, ir al inicio">
-      <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false">
-        <path d="M10 38V10l28 28V10" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="38" cy="10" r="3.2" fill="currentColor"/>
-      </svg>
-      <span>NuvenDigital</span>
+      <svg class="mk" viewBox="5 3 89 72" width="40" height="32" aria-hidden="true" focusable="false"><use href="#nd-mark"/></svg>
+      <span class="wm">NUVEN<i>DIGITAL</i></span>
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#incluye">Qué incluye</a>
-      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#historia">Una noche cualquiera</a>
+      <a href="#demo">Pruébala</a>
       <a href="#ejemplo">Ejemplo real</a>
       <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
@@ -63,9 +87,11 @@
 
 <main id="main">
 
+  <!-- 1. Inicio -->
   <section class="hero" id="inicio">
+    <canvas class="field" id="field" aria-hidden="true"></canvas>
     <div class="wrap">
-      <h1 class="hero-title" id="heroTitle">Tu negocio merece una web que haga sonar el teléfono.</h1>
+      <h1 class="hero-title">Tu negocio merece una web que haga sonar el teléfono.</h1>
       <p class="hero-sub">Hacemos webs sencillas y profesionales para reformistas, fontaneros, electricistas y pintores. Se ven bien en el móvil, cargan rápido y tu WhatsApp está siempre a un toque.</p>
       <div class="hero-cta">
         <a class="btn btn-wa" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Pedir presupuesto por WhatsApp</a>
@@ -75,86 +101,112 @@
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Reformas</span><span>Fontanería</span><span>Electricidad</span><span>Pintura</span><span>Carpintería</span><span>Alicatado</span><span>Cerrajería</span><span>Climatización</span>
-      <span>Reformas</span><span>Fontanería</span><span>Electricidad</span><span>Pintura</span><span>Carpintería</span><span>Alicatado</span><span>Cerrajería</span><span>Climatización</span>
-    </div>
-  </div>
-
-  <section class="sec" id="incluye" aria-labelledby="t-incluye">
-    <div class="wrap">
-      <h2 id="t-incluye">Una web que trabaja mientras tú estás en la obra</h2>
-      <p class="lead">Sin florituras que no necesitas. Esto es lo que lleva cada web que hacemos.</p>
-      <ul class="rows">
-        <li class="row">
-          <h3>Pensada para el móvil</h3>
-          <p>Tus clientes te buscan desde el teléfono. Diseñamos primero para esa pantalla y luego para el ordenador.</p>
-        </li>
-        <li class="row">
-          <h3>Teléfono y WhatsApp siempre a la vista</h3>
-          <p>Botones fijos para que te llamen o te escriban sin tener que buscar nada.</p>
-        </li>
-        <li class="row">
-          <h3>Un formulario que abre WhatsApp</h3>
-          <p>El cliente rellena tres datos y te llega el mensaje ya escrito. No guardamos sus datos y no hace falta aviso de cookies.</p>
-        </li>
-        <li class="row">
-          <h3>Preparada para Google</h3>
-          <p>Título, descripción y zona bien puestos para que te encuentren cuando buscan tu oficio en tu pueblo.</p>
-        </li>
-        <li class="row">
-          <h3>Ligera y rápida</h3>
-          <p>Pesa poco y abre al instante, incluso con poca cobertura en una obra o en un sótano.</p>
-        </li>
-        <li class="row">
-          <h3>Te la dejamos funcionando</h3>
-          <p>Te la entregamos publicada y te explicamos cómo cambiar un teléfono, un horario o una zona.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sec" id="proceso" aria-labelledby="t-proceso">
-    <div class="wrap">
-      <h2 id="t-proceso">Cómo trabajamos</h2>
-      <p class="lead">Cuatro pasos, sin papeleo ni reuniones eternas.</p>
-      <ol class="steps" id="steps">
-        <li class="step">
-          <span class="step-n" aria-hidden="true">1</span>
-          <div>
-            <h3>Nos cuentas tu negocio</h3>
-            <p>Por WhatsApp o por teléfono. Si tienes logo, fotos de trabajos y tus zonas, mejor. Si no, te decimos qué hace falta.</p>
+  <!-- 2. Historia: una noche cualquiera (se mueve con el scroll) -->
+  <section class="story" id="historia" aria-labelledby="t-story">
+    <div class="story-pin">
+      <div class="wrap story-grid">
+        <div class="caps">
+          <h2 id="t-story">Una noche cualquiera, tu web trabaja por ti</h2>
+          <ol class="cap-list">
+            <li class="cap on" data-i="0">
+              <span class="cap-t">Domingo, 22:04</span>
+              <p>A Marta se le rompe una tubería y busca un fontanero en Google.</p>
+            </li>
+            <li class="cap" data-i="1">
+              <span class="cap-t">22:05</span>
+              <p>Abre tres webs. Dos tardan en cargar y las cierra.</p>
+            </li>
+            <li class="cap" data-i="2">
+              <span class="cap-t">22:05</span>
+              <p>La tercera abre al instante. El teléfono y el WhatsApp están ahí, sin buscar.</p>
+            </li>
+            <li class="cap" data-i="3">
+              <span class="cap-t">22:06</span>
+              <p>Toca WhatsApp y el mensaje ya está escrito. Tú solo contestas.</p>
+            </li>
+          </ol>
+          <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+          <p class="story-end">Una buena web no vende palabras bonitas: consigue que te escriban cuando te necesitan.</p>
+        </div>
+        <div class="phone-wrap" aria-hidden="true">
+          <div class="phone" id="phone" data-scene="0">
+            <div class="ph-screen">
+              <div class="sc sc-0">
+                <div class="srch">fontanero urgente</div>
+                <div class="res top-res"><b>Fontanería Ejemplo</b><span>Abierto ahora · Urgencias 24 h</span><i></i></div>
+                <div class="res"><b>Otro fontanero</b><span>Sin horario</span><i></i></div>
+                <div class="res"><b>Directorio de servicios</b><span>Anuncios y listados</span><i></i></div>
+              </div>
+              <div class="sc sc-1">
+                <div class="tabs">
+                  <div class="tab bad"><div><b>Web 1</b><br><small>Cargando…</small></div><span class="spin"></span></div>
+                  <div class="tab bad"><div><b>Web 2</b><br><small>Cargando…</small></div><span class="spin"></span></div>
+                  <div class="tab ok"><div><b>Fontanería Ejemplo</b><br><small>Lista</small></div><span class="tick"></span></div>
+                </div>
+              </div>
+              <div class="sc sc-2">
+                <div class="mw">
+                  <p class="mw-name">Fontanería Ejemplo</p>
+                  <p class="mw-tag">Urgencias 24 h</p>
+                  <div class="mw-btns"><span class="mw-b w">WhatsApp</span><span class="mw-b">Llamar</span></div>
+                  <ul class="mw-list"><li>Fugas y atascos</li><li>Calentadores</li><li>Reformas de baño</li></ul>
+                  <p class="mw-zone">Costa Brava</p>
+                </div>
+              </div>
+              <div class="sc sc-3">
+                <div class="notif"><b>Mensaje nuevo</b>Marta: se me ha roto una tubería</div>
+                <div class="bub">Hola, se me ha roto una tubería en la cocina. ¿Podéis venir hoy?</div>
+                <p class="sent">Enviado desde la web</p>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="step">
-          <span class="step-n" aria-hidden="true">2</span>
-          <div>
-            <h3>Te enseñamos un borrador</h3>
-            <p>Lo ves en tu propio móvil, no en una presentación. Así sabes cómo quedará de verdad.</p>
-          </div>
-        </li>
-        <li class="step">
-          <span class="step-n" aria-hidden="true">3</span>
-          <div>
-            <h3>Lo ajustamos contigo</h3>
-            <p>Cambiamos textos, fotos y detalles hasta que te represente bien.</p>
-          </div>
-        </li>
-        <li class="step">
-          <span class="step-n" aria-hidden="true">4</span>
-          <div>
-            <h3>La publicamos</h3>
-            <p>Tu web online y funcionando, y tú sabiendo cómo tocarla.</p>
-          </div>
-        </li>
-      </ol>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- 3. Demo con selector de oficio -->
+  <section class="sec" id="demo" aria-labelledby="t-demo">
+    <div class="wrap demo-grid">
+      <div>
+        <h2 id="t-demo">Elige tu oficio y mira cómo quedaría</h2>
+        <p class="lead">Es una demo con datos inventados. La tuya llevaría tu nombre, tu zona y tus fotos.</p>
+        <div class="chips" role="group" aria-label="Elige un oficio">
+          <button class="chip" type="button" data-trade="fontaneria" aria-pressed="true">Fontanero</button>
+          <button class="chip" type="button" data-trade="electricidad" aria-pressed="false">Electricista</button>
+          <button class="chip" type="button" data-trade="pintura" aria-pressed="false">Pintor</button>
+          <button class="chip" type="button" data-trade="reformas" aria-pressed="false">Reformas</button>
+        </div>
+        <ul class="feat">
+          <li><h3>Pensada para el móvil</h3><p>Tus clientes te buscan desde el teléfono, así que se diseña primero para esa pantalla.</p></li>
+          <li><h3>Teléfono y WhatsApp siempre a la vista</h3><p>Botones fijos para que te llamen o te escriban sin buscar nada.</p></li>
+          <li><h3>Un formulario que abre WhatsApp</h3><p>El cliente rellena tres datos y te llega el mensaje escrito. No guardamos sus datos ni hace falta aviso de cookies.</p></li>
+          <li><h3>Preparada para Google</h3><p>Título, descripción y zona bien puestos para que te encuentren en tu pueblo.</p></li>
+          <li><h3>Ligera y rápida</h3><p>Pesa poco y abre al instante, incluso con poca cobertura.</p></li>
+        </ul>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="ph-screen">
+            <div class="sc" style="opacity:1">
+              <div class="mw" id="mw" aria-live="polite">
+                <p class="mw-name" data-b="name">Fontanería Ejemplo</p>
+                <p class="mw-tag" data-b="tag">Urgencias 24 h</p>
+                <div class="mw-btns"><span class="mw-b w">WhatsApp</span><span class="mw-b">Llamar</span></div>
+                <ul class="mw-list"><li data-b="s1">Fugas y atascos</li><li data-b="s2">Calentadores</li><li data-b="s3">Reformas de baño</li></ul>
+                <p class="mw-zone" data-b="zone">Costa Brava</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Ejemplo real (sección blanca) -->
   <section class="sec paper" id="ejemplo" aria-labelledby="t-ejemplo">
     <div class="wrap case">
-      <div class="case-text">
+      <div>
         <h2 id="t-ejemplo">Una web real, ya en marcha</h2>
         <p class="lead">La que hicimos para Brico Home Services, una empresa de reformas de Roses.</p>
         <ul class="ticks">
@@ -165,20 +217,16 @@
         </ul>
         <a class="btn btn-dark" href="https://bricohomeservices.com" target="_blank" rel="noopener">Ver la web de Brico Home Services<span class="sr"> (se abre en otra pestaña)</span></a>
       </div>
-      <div class="case-visual" data-progress aria-hidden="true">
+      <div class="case-visual" data-progress>
         <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span>bricohomeservices.com</span></div>
-          <div class="browser-body">
-            <b class="b-title"></b><b class="b-title s"></b>
-            <em class="b-line"></em><em class="b-line s"></em>
-            <div class="b-btns"><u></u><u></u></div>
-            <div class="b-grid"><s></s><s></s><s></s></div>
-          </div>
+          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>bricohomeservices.com</span></div>
+          <img src="assets/img/brico-home-services.webp" width="1600" height="904" loading="lazy" decoding="async" alt="Captura de la web de Brico Home Services: titular sobre reformas en Roses y botones para pedir presupuesto por WhatsApp o llamar">
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 5. Precios -->
   <section class="sec" id="precios" aria-labelledby="t-precios">
     <div class="wrap">
       <h2 id="t-precios">Precios claros</h2>
@@ -224,6 +272,7 @@
     </div>
   </section>
 
+  <!-- 6. Preguntas -->
   <section class="sec" id="faq" aria-labelledby="t-faq">
     <div class="wrap narrow">
       <h2 id="t-faq">Preguntas frecuentes</h2>
@@ -252,11 +301,17 @@
     </div>
   </section>
 
+  <!-- 7. Contacto -->
   <section class="sec" id="contacto" aria-labelledby="t-contacto">
     <div class="wrap contact">
       <div>
         <h2 id="t-contacto">Cuéntanos qué necesitas</h2>
         <p class="lead">Rellena el formulario y se abrirá WhatsApp con tu mensaje ya escrito. Solo tienes que enviarlo.</p>
+        <ol class="next">
+          <li>Te respondemos por WhatsApp.</li>
+          <li>Te enseñamos un borrador en tu propio móvil.</li>
+          <li>Lo ajustamos contigo y la publicamos.</li>
+        </ol>
         <dl class="info">
           <div><dt>WhatsApp y teléfono</dt><dd><a href="tel:+34600000000">+34 600 000 000</a></dd></div>
           <div><dt>Correo</dt><dd><a href="mailto:hola@nuvendigital.com">hola@nuvendigital.com</a></dd></div>
@@ -264,17 +319,17 @@
         </dl>
       </div>
       <form class="form" id="waForm" action="https://wa.me/34600000000" method="get" novalidate>
-        <div class="field">
+        <div class="field-w">
           <label for="f-nombre">Tu nombre</label>
           <input id="f-nombre" name="nombre" type="text" autocomplete="given-name" required>
           <span class="err" id="e-nombre" hidden>Escribe tu nombre.</span>
         </div>
-        <div class="field">
+        <div class="field-w">
           <label for="f-oficio">¿A qué te dedicas?</label>
           <input id="f-oficio" name="oficio" type="text" placeholder="Ej.: fontanero, reformas, pintura" required>
           <span class="err" id="e-oficio" hidden>Cuéntanos a qué te dedicas.</span>
         </div>
-        <div class="field">
+        <div class="field-w">
           <label for="f-msg">¿Qué necesitas? <small>(opcional)</small></label>
           <textarea id="f-msg" name="mensaje" rows="3"></textarea>
         </div>
@@ -289,11 +344,8 @@
 <footer class="foot">
   <div class="wrap foot-in">
     <a class="logo" href="#inicio" aria-label="NuvenDigital, volver arriba">
-      <svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true" focusable="false">
-        <path d="M10 38V10l28 28V10" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="38" cy="10" r="3.2" fill="currentColor"/>
-      </svg>
-      <span>NuvenDigital</span>
+      <svg class="mk" viewBox="5 3 89 72" width="40" height="32" aria-hidden="true" focusable="false"><use href="#nd-mark"/></svg>
+      <span class="wm">NUVEN<i>DIGITAL</i></span>
     </a>
     <p>Webs sencillas y profesionales para negocios locales.</p>
     <p><a href="privacidad.html">Política de privacidad</a></p>
