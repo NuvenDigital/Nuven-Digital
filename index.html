@@ -642,6 +642,7 @@ h3{font:600 1.15rem/1.25 var(--display);letter-spacing:-.02em}
 .info .ic{grid-row:1/3;width:1.6rem;height:1.6rem;color:hsl(var(--nh) 95% 78%)}
 .faq{margin-top:1.2rem}
 
+.price .from{font:500 .9rem/1 var(--body);letter-spacing:0;margin:0 .15rem 0 0}.pnote{margin-top:1.4rem;max-width:44rem}
 </style>
 <script>
 /* js: hay JavaScript. rm: la persona pidió reducir movimiento. live: la historia se mueve con el scroll.
@@ -714,11 +715,6 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
   <section class="sec paper" id="proyectos" aria-labelledby="t-proyectos">
     <div class="wrap">
       <h2 id="t-proyectos">Cada negocio es distinto, y su web también</h2>
-      <p class="lead">Escribe el nombre de tu negocio y mira cómo queda en cada estilo.</p>
-      <div class="pick">
-        <label class="pick-t" for="bizName">El nombre de tu negocio</label>
-        <input class="biz" id="bizName" type="text" maxlength="26" placeholder="Por ejemplo: Bar Marina" autocomplete="off">
-      </div>
     </div>
     <div class="wrap stage-wrap">
       <div class="stage" id="stage" role="group" aria-roledescription="carrusel" aria-label="Estilos de ejemplo">
@@ -814,15 +810,14 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
   <!-- 5. Precios -->
   <section class="sec" id="precios" aria-labelledby="t-precios">
     <div class="wrap">
-      <h2 id="t-precios" data-r>Precios claros, sin letra pequeña</h2>
-      <p class="lead" data-r>Todos los precios llevan IVA incluido. Te decimos el importe por escrito antes de empezar.</p>
+      <h2 id="t-precios" data-r>Precios claros, adaptados a tu proyecto</h2>
       <div class="plans">
         <article class="plan neon" data-r>
           <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-page"/></svg>
           <h3>Básica</h3>
           <p class="plan-d">Una página.</p>
           <p class="badge">Lanzamiento para los 3 primeros</p>
-          <p class="price">300 € <small>IVA incl.</small></p>
+          <p class="price"><small class="from">Desde</small> 300 € <small>IVA incl.</small></p>
           <p class="was">Después, 420 €</p>
           <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20B%C3%A1sica%20de%20300%20%E2%82%AC." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Quiero la Básica</a>
         </article>
@@ -831,7 +826,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           <h3>Completa</h3>
           <p class="plan-d">Hasta 5 páginas.</p>
           <p class="badge">La más elegida</p>
-          <p class="price">710 € <small>IVA incl.</small></p>
+          <p class="price"><small class="from">Desde</small> 710 € <small>IVA incl.</small></p>
           <p class="was">&nbsp;</p>
           <a class="btn btn-dark" href="https://wa.me/34625088206?text=Hola%2C%20me%20interesa%20la%20web%20Completa%20%28hasta%205%20p%C3%A1ginas%29." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Quiero la Completa</a>
         </article>
@@ -845,6 +840,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           <a class="btn btn-ghost" href="https://wa.me/34625088206?text=Hola%2C%20quiero%20una%20web%20a%20medida." rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Pedir presupuesto</a>
         </article>
       </div>
+      <p class="fine pnote" data-r>Precios orientativos para proyectos habituales. Cada proyecto es distinto, así que te decimos el importe final por escrito antes de empezar, y ese es el precio cerrado. Todos los precios llevan IVA incluido.</p>
       <ul class="perks" data-r>
         <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>50 % al empezar y 50 % al entregar</span></li>
         <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-edit"/></svg><span>2 rondas de cambios incluidas</span></li>
@@ -969,7 +965,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
           <textarea id="f-msg" name="mensaje" rows="3"></textarea>
         </div>
         <button class="btn btn-wa" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Abrir WhatsApp con mi mensaje</button>
-        <p class="fine">Al pulsar se abrirá WhatsApp. Esta web no guarda tus datos. Más información en la <a href="privacidad.html">política de privacidad</a>.</p>
+        <p class="fine">Al pulsar se abrirá WhatsApp. Esta web no guarda tus datos. Más información en la <a href="privacidad.html">política de privacidad</a> y el <a href="aviso-legal.html">aviso legal</a>.</p>
       </form>
     </div>
   </section>
@@ -983,7 +979,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <img class="wm" src="logo-wordmark.svg" width="96" height="27" alt="">
     </a>
     <p>Tu negocio, a un toque de tus clientes.</p>
-    <p><a href="privacidad.html">Política de privacidad</a></p>
+    <p><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Política de privacidad</a></p>
     <p class="copy">© 2026 NuvenDigital</p>
   </div>
 </footer>
