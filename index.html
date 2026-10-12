@@ -643,6 +643,7 @@ h3{font:600 1.15rem/1.25 var(--display);letter-spacing:-.02em}
 .faq{margin-top:1.2rem}
 
 .price .from{font:500 .9rem/1 var(--body);letter-spacing:0;margin:0 .15rem 0 0}.pnote{margin-top:1.4rem;max-width:44rem}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:0;transition:opacity 1.4s ease;filter:grayscale(1);pointer-events:none}.hero-vid.on{opacity:.26}
 </style>
 <script>
 /* js: hay JavaScript. rm: la persona pidió reducir movimiento. live: la historia se mueve con el scroll.
@@ -1368,6 +1369,19 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
   }
 })();
 
+</script>
+<script>
+/* Vídeo de fondo del inicio: solo pantalla grande, sin audio, nunca con "reducir movimiento" ni ahorro de datos. Se pide cuando la página ya cargó. */
+(function(){var h=document.getElementById("inicio");if(!h||!window.matchMedia)return;
+var big=matchMedia("(min-width:62rem)"),rm=matchMedia("(prefers-reduced-motion: reduce)"),cn=navigator.connection;
+if(!big.matches||rm.matches||(cn&&cn.saveData))return;
+function go(){var v=document.createElement("video");v.className="hero-vid";v.muted=true;v.loop=true;v.playsInline=true;
+v.setAttribute("aria-hidden","true");v.tabIndex=-1;v.preload="auto";v.poster="hero-poster.webp";["mp4","webm"].forEach(function(t){var s=document.createElement("source");s.src="hero-bg."+t;s.type="video/"+t;v.appendChild(s)});
+h.insertBefore(v,h.firstChild);requestAnimationFrame(function(){v.classList.add("on")});
+var p=v.play();if(p&&p.catch)p.catch(function(){});
+if("IntersectionObserver"in window)new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var q=v.play();if(q&&q.catch)q.catch(function(){})}else v.pause()})}).observe(h);
+if(rm.addEventListener)rm.addEventListener("change",function(e){if(e.matches){v.pause();v.classList.remove("on")}})}
+addEventListener("load",function(){setTimeout(go,300)})})();
 </script>
 </body>
 </html>
