@@ -151,9 +151,6 @@
     for (var j = 0; j < dots.length; j++) dots[j].classList.toggle("on", j <= n);
   };
 
-  /* ---------- Mockup del ejemplo real: se inclina con el scroll ---------- */
-  var tilt = document.querySelector("[data-progress]");
-
   var ticking = false;
   var update = function () {
     ticking = false;
@@ -163,13 +160,9 @@
       var p = clamp(-r.top / Math.max(1, r.height - vh), 0, 0.999);
       setScene(Math.min(3, Math.floor(p * 4)));
     }
-    if (tilt && !reduce) {
-      var b = tilt.getBoundingClientRect();
-      tilt.style.setProperty("--p", clamp(1 - (b.top + b.height / 2) / vh, 0, 1).toFixed(3));
-    }
   };
   var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-  if (live || (tilt && !reduce)) {
+  if (live) {
     addEventListener("scroll", onScroll, { passive: true });
     addEventListener("resize", onScroll);
     update();
@@ -183,16 +176,25 @@
     reformas: { name: "Reformas Ejemplo", tag: "Baños, cocinas y reformas integrales", s1: "Baños y cocinas", s2: "Reformas integrales", s3: "Terrazas y exteriores", zone: "Costa Brava" }
   };
   var mw = document.getElementById("mw");
-  var chips = document.querySelectorAll(".chip");
-  if (mw && chips.length) {
+  var screen = document.getElementById("demoScreen");
+  if (mw) {
     var binds = {};
     Array.prototype.forEach.call(mw.querySelectorAll("[data-b]"), function (el) { binds[el.getAttribute("data-b")] = el; });
-    Array.prototype.forEach.call(chips, function (chip) {
+    // Cada grupo de botones marca solo uno como activo
+    var pick = function (chip, group) {
+      Array.prototype.forEach.call(group.querySelectorAll(".chip"), function (c) {
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+      });
+    };
+    Array.prototype.forEach.call(document.querySelectorAll(".chip"), function (chip) {
       chip.addEventListener("click", function () {
-        var d = TRADES[chip.getAttribute("data-trade")];
-        if (!d) return;
-        Array.prototype.forEach.call(chips, function (c) { c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
-        for (var k in d) { if (binds[k]) binds[k].textContent = d[k]; }
+        pick(chip, chip.parentNode);
+        var t = chip.getAttribute("data-trade");
+        var st = chip.getAttribute("data-style");
+        if (t && TRADES[t]) {
+          for (var k in TRADES[t]) { if (binds[k]) binds[k].textContent = TRADES[t][k]; }
+        }
+        if (st && screen) screen.setAttribute("data-style", st);
       });
     });
   }

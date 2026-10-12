@@ -7,7 +7,7 @@
 <meta name="description" content="Hacemos webs sencillas y profesionales para reformistas, fontaneros, electricistas y pintores. Rápidas en el móvil y con tu WhatsApp siempre a mano.">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://nuvendigital.com/">
-<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-icon.png">
 <meta property="og:type" content="website">
@@ -37,18 +37,6 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
 </script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="nd-l" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f2f2f2"/><stop offset=".6" stop-color="#d6d6d6"/><stop offset="1" stop-color="#8e8e8e"/></linearGradient>
-    <linearGradient id="nd-r" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dedede"/><stop offset=".55" stop-color="#a9a9a9"/><stop offset="1" stop-color="#5e5e5e"/></linearGradient>
-    <linearGradient id="nd-d" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f1f1f1"/><stop offset="1" stop-color="#d9d9d9"/></linearGradient>
-    <symbol id="nd-mark" viewBox="5 3 89 72">
-      <path d="M7.5 17h23.8v41H7.5z" fill="url(#nd-l)"/>
-      <path d="M68.3 19.2h24v40.6h-24z" fill="url(#nd-r)"/>
-      <path d="M7.5 17C7.5 10 13.6 5 21.6 5H27.4C30.2 5 32.2 6 34 7.7L92.3 59.8C92.3 67.4 86.6 72.6 79 72.6H76.6C74.2 72.6 72.5 71.9 70.8 70.4L12.6 18.6C11.1 17.3 9.4 16.9 7.5 17Z" fill="url(#nd-d)"/>
-    </symbol>
-  </defs>
-</svg>
 <a class="skip" href="#main">Saltar al contenido</a>
 
 <!-- Intro: un punto de luz se abre en línea y deja ver el logo. Ligera y una vez por sesión. -->
@@ -57,12 +45,8 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
   <span class="i-beam"></span>
   <span class="i-dot"></span>
   <div class="i-logo">
-    <svg class="intro-mark" viewBox="5 3 89 72" width="132" height="107" focusable="false">
-      <path d="M7.5 17h23.8v41H7.5z" fill="url(#nd-l)"/>
-      <path d="M68.3 19.2h24v40.6h-24z" fill="url(#nd-r)"/>
-      <path d="M7.5 17C7.5 10 13.6 5 21.6 5H27.4C30.2 5 32.2 6 34 7.7L92.3 59.8C92.3 67.4 86.6 72.6 79 72.6H76.6C74.2 72.6 72.5 71.9 70.8 70.4L12.6 18.6C11.1 17.3 9.4 16.9 7.5 17Z" fill="url(#nd-d)"/>
-    </svg>
-    <span class="intro-name">NUVEN<i>DIGITAL</i></span>
+    <img class="intro-mark" src="assets/logo-mark.webp" width="132" height="106" alt="">
+    <img class="intro-name" src="assets/logo-wordmark.svg" width="230" height="65" alt="">
   </div>
 </div>
 
@@ -71,8 +55,8 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="#inicio" aria-label="NuvenDigital, ir al inicio">
-      <svg class="mk" viewBox="5 3 89 72" width="40" height="32" aria-hidden="true" focusable="false"><use href="#nd-mark"/></svg>
-      <span class="wm">NUVEN<i>DIGITAL</i></span>
+      <img class="mk" src="assets/logo-mark.webp" width="40" height="32" alt="">
+      <img class="wm" src="assets/logo-wordmark.svg" width="96" height="27" alt="">
     </a>
     <nav class="nav" aria-label="Principal">
       <a href="#historia">Una noche cualquiera</a>
@@ -81,7 +65,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn btn-sm btn-wa" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">WhatsApp</a>
+    <a class="btn btn-sm btn-wa" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20una%20web%20para%20mi%20negocio." rel="noopener">Hablamos</a>
   </div>
 </header>
 
@@ -99,6 +83,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       </div>
       <p class="hero-note">Somos un equipo pequeño de Roses, en Girona. Hablas directo con quien te hace la web.</p>
     </div>
+    <div class="giant" aria-hidden="true"><img src="assets/logo-wordmark.svg" width="490" height="138" alt=""></div>
   </section>
 
   <!-- 2. Historia: una noche cualquiera (se mueve con el scroll) -->
@@ -373,8 +358,8 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
 <footer class="foot">
   <div class="wrap foot-in">
     <a class="logo" href="#inicio" aria-label="NuvenDigital, volver arriba">
-      <svg class="mk" viewBox="5 3 89 72" width="40" height="32" aria-hidden="true" focusable="false"><use href="#nd-mark"/></svg>
-      <span class="wm">NUVEN<i>DIGITAL</i></span>
+      <img class="mk" src="assets/logo-mark.webp" width="40" height="32" alt="">
+      <img class="wm" src="assets/logo-wordmark.svg" width="96" height="27" alt="">
     </a>
     <p>Webs sencillas y profesionales para negocios locales.</p>
     <p><a href="privacidad.html">Política de privacidad</a></p>
