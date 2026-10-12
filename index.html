@@ -199,44 +199,100 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     </div>
   </section>
 
-  <!-- 4. Proyectos: tres estilos distintos (sección blanca) -->
+  <!-- 4. Estilos: la misma web contada en seis estilos, con transición distinta (sección blanca) -->
   <section class="sec paper" id="proyectos" aria-labelledby="t-proyectos">
     <div class="wrap">
       <h2 id="t-proyectos">Cada negocio es distinto, y su web también</h2>
-      <p class="lead">Tres webs ya publicadas, con tres estilos muy diferentes. La tuya se adapta a tu negocio y a tu gusto.</p>
+      <p class="lead">Mira cómo cambia una misma web según el estilo. Desliza, usa las flechas o toca un nombre. La tuya se hace a tu gusto: colores, letra y forma de ser.</p>
     </div>
-    <div class="wrap works-wrap">
-      <ul class="works" tabindex="0" aria-label="Proyectos. Desliza para ver más.">
-        <li class="work">
-          <div class="browser">
-            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>bricohomeservices.com</span></div>
-            <img src="assets/img/brico-home-services.webp" width="960" height="540" loading="lazy" decoding="async" alt="Captura de la web de Brico Home Services: fondo claro, titular sobre reformas en Roses y botón naranja para pedir presupuesto por WhatsApp">
+    <div class="wrap stage-wrap">
+      <div class="stage" id="stage" role="group" aria-roledescription="carrusel" aria-label="Estilos de ejemplo">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span id="stUrl">tureformas.es</span></div>
+          <div class="deck" id="deck">
+          <figure class="slide m1 on" data-name="Claro y cálido" data-who="Reformas, pintura, interiorismo" data-desc="Colores suaves, formas redondeadas y un botón naranja que invita a pulsar." data-sw="#fbebe1,#f2521b,#1d1d1d" data-url="tureformas.es">
+            <div class="m-c" aria-hidden="true">
+              <span class="m-k">Reformas Ejemplo</span>
+              <b class="m-h">Reformas que se acaban a tiempo</b>
+              <p class="m-p">Baños, cocinas y reformas integrales en la Costa Brava. Presupuesto sin compromiso.</p>
+              <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
+              <span class="m-b">Pedir presupuesto</span>
+            </div>
+            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-1.webp" alt="" width="960" height="720"&gt; --></div>
+            <figcaption><b>Claro y cálido.</b> Reformas, pintura, interiorismo. Colores suaves, formas redondeadas y un botón naranja que invita a pulsar.</figcaption>
+          </figure>
+          <figure class="slide m2" data-name="Oscuro e industrial" data-who="Fontanería, cerrajería, mecánica" data-desc="Fondo negro, letra condensada en mayúsculas y un amarillo que se ve de lejos." data-sw="#111315,#fcc204,#8a8a8a" data-url="tufontanero.es">
+            <div class="m-c" aria-hidden="true">
+              <span class="m-k">Reformas Ejemplo</span>
+              <b class="m-h">Reformas que se acaban a tiempo</b>
+              <p class="m-p">Baños, cocinas y reformas integrales en la Costa Brava. Presupuesto sin compromiso.</p>
+              <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
+              <span class="m-b">Pedir presupuesto</span>
+            </div>
+            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-2.webp" alt="" width="960" height="720"&gt; --></div>
+            <figcaption><b>Oscuro e industrial.</b> Fontanería, cerrajería, mecánica. Fondo negro, letra condensada en mayúsculas y un amarillo que se ve de lejos.</figcaption>
+          </figure>
+          <figure class="slide m3" data-name="Elegante y sereno" data-who="Arquitectura, decoración, estética" data-desc="Letra con serifa, mucho aire y tonos tierra. Transmite calma y cuidado." data-sw="#f3ece2,#8a6a4a,#2b2420" data-url="tuestudio.es">
+            <div class="m-c" aria-hidden="true">
+              <span class="m-k">Reformas Ejemplo</span>
+              <b class="m-h">Reformas que se acaban a tiempo</b>
+              <p class="m-p">Baños, cocinas y reformas integrales en la Costa Brava. Presupuesto sin compromiso.</p>
+              <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
+              <span class="m-b">Pedir presupuesto</span>
+            </div>
+            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-3.webp" alt="" width="960" height="720"&gt; --></div>
+            <figcaption><b>Elegante y sereno.</b> Arquitectura, decoración, estética. Letra con serifa, mucho aire y tonos tierra. Transmite calma y cuidado.</figcaption>
+          </figure>
+          <figure class="slide m4" data-name="Vivo y con color" data-who="Electricistas, limpieza, mudanzas" data-desc="Colores fuertes y formas que se salen de la caja. Cercano, alegre y fácil de recordar." data-sw="#ffd83d,#2f5bff,#ff4d6d" data-url="tuelectricista.es">
+            <div class="m-c" aria-hidden="true">
+              <span class="m-k">Reformas Ejemplo</span>
+              <b class="m-h">Reformas que se acaban a tiempo</b>
+              <p class="m-p">Baños, cocinas y reformas integrales en la Costa Brava. Presupuesto sin compromiso.</p>
+              <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
+              <span class="m-b">Pedir presupuesto</span>
+            </div>
+            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-4.webp" alt="" width="960" height="720"&gt; --></div>
+            <figcaption><b>Vivo y con color.</b> Electricistas, limpieza, mudanzas. Colores fuertes y formas que se salen de la caja. Cercano, alegre y fácil de recordar.</figcaption>
+          </figure>
+          <figure class="slide m5" data-name="Técnico y preciso" data-who="Instalaciones, ingenierías, domótica" data-desc="Cuadrícula de plano, letra tipo máquina y un verde de pantalla. Serio y ordenado." data-sw="#06130f,#38f2a5,#d9fff0" data-url="tuinstalador.es">
+            <div class="m-c" aria-hidden="true">
+              <span class="m-k">Reformas Ejemplo</span>
+              <b class="m-h">Reformas que se acaban a tiempo</b>
+              <p class="m-p">Baños, cocinas y reformas integrales en la Costa Brava. Presupuesto sin compromiso.</p>
+              <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
+              <span class="m-b">Pedir presupuesto</span>
+            </div>
+            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-5.webp" alt="" width="960" height="720"&gt; --></div>
+            <figcaption><b>Técnico y preciso.</b> Instalaciones, ingenierías, domótica. Cuadrícula de plano, letra tipo máquina y un verde de pantalla. Serio y ordenado.</figcaption>
+          </figure>
+          <figure class="slide m6" data-name="Editorial y atrevido" data-who="Estudios, tiendas, marcas con carácter" data-desc="Titulares enormes, bordes gruesos y contraste. Para quien quiere destacar." data-sw="#f4f1ea,#111111,#ff5a1f" data-url="tumarca.es">
+            <div class="m-c" aria-hidden="true">
+              <span class="m-k">Reformas Ejemplo</span>
+              <b class="m-h">Reformas que se acaban a tiempo</b>
+              <p class="m-p">Baños, cocinas y reformas integrales en la Costa Brava. Presupuesto sin compromiso.</p>
+              <span class="m-t"><b>Baños</b><b>Cocinas</b><b>Terrazas</b></span>
+              <span class="m-b">Pedir presupuesto</span>
+            </div>
+            <div class="m-img" aria-hidden="true"><!-- Aquí irá la foto: &lt;img src="assets/img/estilo-6.webp" alt="" width="960" height="720"&gt; --></div>
+            <figcaption><b>Editorial y atrevido.</b> Estudios, tiendas, marcas con carácter. Titulares enormes, bordes gruesos y contraste. Para quien quiere destacar.</figcaption>
+          </figure>
           </div>
-          <h3>Brico Home Services</h3>
-          <p class="work-type">Empresa de reformas en Roses. Web en cinco idiomas, con urgencias 24 h y WhatsApp en toda la página.</p>
-          <p class="work-style"><span class="sws" aria-hidden="true"><i style="--c:#fbebe1"></i><i style="--c:#f2521b"></i><i style="--c:#1d1d1d"></i></span>Claro y cálido, con el naranja para actuar.</p>
-          <a class="work-link" href="https://bricohomeservices.com" target="_blank" rel="noopener">Ver la web<span class="sr"> de Brico Home Services (se abre en otra pestaña)</span></a>
-        </li>
-        <li class="work">
-          <div class="browser">
-            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>workarmor.es</span></div>
-            <img src="assets/img/workarmor.webp" width="960" height="540" loading="lazy" decoding="async" alt="Captura de la web de Work Armor: fondo oscuro, titular en mayúsculas sobre zapatillas de trabajo con puntera de acero y botón amarillo de compra">
+        </div>
+        <div class="stage-ui" id="stageUi" hidden>
+          <div class="stage-cap" aria-live="polite">
+            <h3 id="stName">Claro y cálido</h3>
+            <p id="stDesc"></p>
+            <p class="work-style"><span class="sws" id="stSw" aria-hidden="true"></span><span id="stWho"></span></p>
           </div>
-          <h3>Work Armor</h3>
-          <p class="work-type">Tienda online de zapatillas de trabajo. Guía de tallas, seguimiento del pedido y pago en la propia web.</p>
-          <p class="work-style"><span class="sws" aria-hidden="true"><i style="--c:#111315"></i><i style="--c:#fcc204"></i><i style="--c:#8a8a8a"></i></span>Oscuro e industrial, con letra condensada en mayúsculas.</p>
-          <a class="work-link" href="https://workarmor.es" target="_blank" rel="noopener">Ver la web<span class="sr"> de Work Armor (se abre en otra pestaña)</span></a>
-        </li>
-        <li class="work">
-          <div class="browser">
-            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>MindMap</span></div>
-            <img src="assets/img/mindmap.webp" width="960" height="540" loading="lazy" decoding="async" alt="Captura de MindMap: fondo casi negro, titular grande en letra ancha y botón verde lima">
+          <div class="stage-bar">
+            <button class="sbtn" type="button" id="stPrev" aria-label="Estilo anterior">&larr;</button>
+            <button class="sbtn" type="button" id="stNext" aria-label="Estilo siguiente">&rarr;</button>
+            <button class="sbtn" type="button" id="stPlay" aria-label="Pausar el cambio automático" aria-pressed="false">&#10074;&#10074;</button>
+            <div class="tabs" id="stTabs"><button class="tab" type="button" data-i="0" aria-current="true">Claro y cálido</button><button class="tab" type="button" data-i="1">Oscuro e industrial</button><button class="tab" type="button" data-i="2">Elegante y sereno</button><button class="tab" type="button" data-i="3">Vivo y con color</button><button class="tab" type="button" data-i="4">Técnico y preciso</button><button class="tab" type="button" data-i="5">Editorial y atrevido</button></div>
           </div>
-          <h3>MindMap</h3>
-          <p class="work-type">Aplicación web que ayuda a entender cómo piensas, en inglés, con registro y panel de usuario.</p>
-          <p class="work-style"><span class="sws" aria-hidden="true"><i style="--c:#0a0a0a"></i><i style="--c:#c9f13b"></i><i style="--c:#f7f6f2"></i></span>Oscuro y tecnológico, con letra ancha y verde lima.</p>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:1.2rem">Son ejemplos de estilo, no clientes. Las fotos de cada web las ponemos contigo.</p>
     </div>
   </section>
 
