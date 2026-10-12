@@ -77,7 +77,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     <nav class="nav" aria-label="Principal">
       <a href="#historia">Una noche cualquiera</a>
       <a href="#demo">Pruébala</a>
-      <a href="#ejemplo">Ejemplo real</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -169,13 +169,24 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
   <section class="sec" id="demo" aria-labelledby="t-demo">
     <div class="wrap demo-grid">
       <div>
-        <h2 id="t-demo">Elige tu oficio y mira cómo quedaría</h2>
-        <p class="lead">Es una demo con datos inventados. La tuya llevaría tu nombre, tu zona y tus fotos.</p>
-        <div class="chips" role="group" aria-label="Elige un oficio">
-          <button class="chip" type="button" data-trade="fontaneria" aria-pressed="true">Fontanero</button>
-          <button class="chip" type="button" data-trade="electricidad" aria-pressed="false">Electricista</button>
-          <button class="chip" type="button" data-trade="pintura" aria-pressed="false">Pintor</button>
-          <button class="chip" type="button" data-trade="reformas" aria-pressed="false">Reformas</button>
+        <h2 id="t-demo">Elige tu oficio y tu estilo</h2>
+        <p class="lead">Es una demo con datos inventados. Tu web llevaría tu nombre, tu zona, tus fotos y los colores y las letras que quieras.</p>
+        <div class="pick">
+          <p class="pick-t" id="pk-oficio">Oficio</p>
+          <div class="chips" role="group" aria-labelledby="pk-oficio">
+            <button class="chip" type="button" data-trade="fontaneria" aria-pressed="true">Fontanero</button>
+            <button class="chip" type="button" data-trade="electricidad" aria-pressed="false">Electricista</button>
+            <button class="chip" type="button" data-trade="pintura" aria-pressed="false">Pintor</button>
+            <button class="chip" type="button" data-trade="reformas" aria-pressed="false">Reformas</button>
+          </div>
+          <p class="pick-t" id="pk-estilo">Estilo</p>
+          <div class="chips" role="group" aria-labelledby="pk-estilo">
+            <button class="chip" type="button" data-style="nuven" aria-pressed="true">Blanco y negro</button>
+            <button class="chip" type="button" data-style="limpio" aria-pressed="false">Claro y limpio</button>
+            <button class="chip" type="button" data-style="industrial" aria-pressed="false">Industrial</button>
+            <button class="chip" type="button" data-style="elegante" aria-pressed="false">Elegante</button>
+            <button class="chip" type="button" data-style="vivo" aria-pressed="false">Color vivo</button>
+          </div>
         </div>
         <ul class="feat">
           <li><h3>Pensada para el móvil</h3><p>Tus clientes te buscan desde el teléfono, así que se diseña primero para esa pantalla.</p></li>
@@ -187,7 +198,7 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
       </div>
       <div class="phone-wrap">
         <div class="phone">
-          <div class="ph-screen">
+          <div class="ph-screen" id="demoScreen" data-style="nuven">
             <div class="sc" style="opacity:1">
               <div class="mw" id="mw" aria-live="polite">
                 <p class="mw-name" data-b="name">Fontanería Ejemplo</p>
@@ -203,26 +214,44 @@ try{if(!sessionStorage.getItem("nd-intro"))d.classList.add("intro-active")}catch
     </div>
   </section>
 
-  <!-- 4. Ejemplo real (sección blanca) -->
-  <section class="sec paper" id="ejemplo" aria-labelledby="t-ejemplo">
-    <div class="wrap case">
-      <div>
-        <h2 id="t-ejemplo">Una web real, ya en marcha</h2>
-        <p class="lead">La que hicimos para Brico Home Services, una empresa de reformas de Roses.</p>
-        <ul class="ticks">
-          <li>WhatsApp y teléfono en toda la página.</li>
-          <li>Sección de urgencias 24 horas.</li>
-          <li>Formulario que abre WhatsApp con el mensaje escrito.</li>
-          <li>Disponible en cinco idiomas, para clientes de fuera.</li>
-        </ul>
-        <a class="btn btn-dark" href="https://bricohomeservices.com" target="_blank" rel="noopener">Ver la web de Brico Home Services<span class="sr"> (se abre en otra pestaña)</span></a>
-      </div>
-      <div class="case-visual" data-progress>
-        <div class="browser">
-          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>bricohomeservices.com</span></div>
-          <img src="assets/img/brico-home-services.webp" width="1600" height="904" loading="lazy" decoding="async" alt="Captura de la web de Brico Home Services: titular sobre reformas en Roses y botones para pedir presupuesto por WhatsApp o llamar">
-        </div>
-      </div>
+  <!-- 4. Proyectos: tres estilos distintos (sección blanca) -->
+  <section class="sec paper" id="proyectos" aria-labelledby="t-proyectos">
+    <div class="wrap">
+      <h2 id="t-proyectos">Cada negocio es distinto, y su web también</h2>
+      <p class="lead">Tres webs ya publicadas, con tres estilos muy diferentes. La tuya se adapta a tu negocio y a tu gusto.</p>
+    </div>
+    <div class="wrap works-wrap">
+      <ul class="works" tabindex="0" aria-label="Proyectos. Desliza para ver más.">
+        <li class="work">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>bricohomeservices.com</span></div>
+            <img src="assets/img/brico-home-services.webp" width="960" height="540" loading="lazy" decoding="async" alt="Captura de la web de Brico Home Services: fondo claro, titular sobre reformas en Roses y botón naranja para pedir presupuesto por WhatsApp">
+          </div>
+          <h3>Brico Home Services</h3>
+          <p class="work-type">Empresa de reformas en Roses. Web en cinco idiomas, con urgencias 24 h y WhatsApp en toda la página.</p>
+          <p class="work-style"><span class="sws" aria-hidden="true"><i style="--c:#fbebe1"></i><i style="--c:#f2521b"></i><i style="--c:#1d1d1d"></i></span>Claro y cálido, con el naranja para actuar.</p>
+          <a class="work-link" href="https://bricohomeservices.com" target="_blank" rel="noopener">Ver la web<span class="sr"> de Brico Home Services (se abre en otra pestaña)</span></a>
+        </li>
+        <li class="work">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>workarmor.es</span></div>
+            <img src="assets/img/workarmor.webp" width="960" height="540" loading="lazy" decoding="async" alt="Captura de la web de Work Armor: fondo oscuro, titular en mayúsculas sobre zapatillas de trabajo con puntera de acero y botón amarillo de compra">
+          </div>
+          <h3>Work Armor</h3>
+          <p class="work-type">Tienda online de zapatillas de trabajo. Guía de tallas, seguimiento del pedido y pago en la propia web.</p>
+          <p class="work-style"><span class="sws" aria-hidden="true"><i style="--c:#111315"></i><i style="--c:#fcc204"></i><i style="--c:#8a8a8a"></i></span>Oscuro e industrial, con letra condensada en mayúsculas.</p>
+          <a class="work-link" href="https://workarmor.es" target="_blank" rel="noopener">Ver la web<span class="sr"> de Work Armor (se abre en otra pestaña)</span></a>
+        </li>
+        <li class="work">
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>MindMap</span></div>
+            <img src="assets/img/mindmap.webp" width="960" height="540" loading="lazy" decoding="async" alt="Captura de MindMap: fondo casi negro, titular grande en letra ancha y botón verde lima">
+          </div>
+          <h3>MindMap</h3>
+          <p class="work-type">Aplicación web que ayuda a entender cómo piensas, en inglés, con registro y panel de usuario.</p>
+          <p class="work-style"><span class="sws" aria-hidden="true"><i style="--c:#0a0a0a"></i><i style="--c:#c9f13b"></i><i style="--c:#f7f6f2"></i></span>Oscuro y tecnológico, con letra ancha y verde lima.</p>
+        </li>
+      </ul>
     </div>
   </section>
 
